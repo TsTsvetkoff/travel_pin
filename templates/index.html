@@ -474,17 +474,67 @@
 
         // --- E3 Trail: Kom Peak - Emine Cape ---
         // Real decoded trail geometry from the DOM of kom-emine.bg/big-map/ (same
-        // tile/pixel-origin math as the E4 route), now covering ~23.13° through ~27.87°
-        // longitude continuously — from just past Kom Peak, through Vrah Baba, past
+        // tile/pixel-origin math as the E4 route), covering the trail continuously
+        // start to finish — real "Връх Ком" (Kom Peak) marker, through Vrah Baba, past
         // Хижа Свищиплаз and Хижа Козя Стена, Central Balkan, past Kotel, past
-        // Kozichino, almost all the way to the coast — plus the real "Фарът на нос
-        // Емине" (Cape Emine lighthouse) marker as the true finish point. Only two
-        // short stretches remain approximate: Kom Peak itself down to ~23.13°, and the
-        // final ~27.87° to the lighthouse.
-        var e3Start = [43.17388, 23.05210];   // approx — Kom Peak
+        // Kozichino, and the real "Фарът на нос Емине" (Cape Emine lighthouse) marker
+        // as the true finish point. Only one short stretch remains approximate: the
+        // final ~27.87° to the lighthouse (a couple of km along the coast).
+        var e3Start = [43.17389, 23.05206];   // real, decoded — Връх Ком (Kom Peak)
         var e3End = [42.70136, 27.90012];     // real, decoded — Фарът на нос Емине (Cape Emine lighthouse)
 
         var e3TracedKomSection = [
+            [43.17364, 23.05275],
+            [43.17314, 23.05515],
+            [43.17389, 23.05893],
+            [43.17489, 23.06065],
+            [43.17489, 23.06271],
+            [43.17439, 23.06408],
+            [43.17464, 23.06923],
+            [43.17514, 23.07129],
+            [43.17489, 23.07678],
+            [43.17464, 23.07747],
+            [43.17339, 23.07678],
+            [43.17263, 23.07747],
+            [43.16988, 23.07781],
+            [43.16412, 23.08262],
+            [43.16362, 23.08434],
+            [43.16512, 23.08811],
+            [43.16512, 23.09120],
+            [43.16437, 23.09292],
+            [43.16312, 23.09361],
+            [43.16087, 23.09772],
+            [43.16036, 23.09772],
+            [43.15836, 23.09978],
+            [43.15761, 23.10219],
+            [43.15485, 23.10253],
+            [43.15310, 23.10390],
+            [43.15260, 23.10390],
+            [43.15160, 23.10253],
+            [43.15060, 23.10253],
+            [43.14859, 23.10493],
+            [43.14584, 23.10562],
+            [43.14433, 23.10528],
+            [43.14383, 23.10425],
+            [43.14083, 23.10665],
+            [43.14008, 23.10802],
+            [43.13907, 23.11214],
+            [43.13832, 23.11317],
+            [43.13682, 23.11420],
+            [43.13507, 23.11386],
+            [43.13456, 23.11523],
+            [43.13306, 23.11592],
+            [43.13056, 23.11558],
+            [43.12730, 23.11661],
+            [43.12805, 23.11661],
+            [43.12680, 23.11798],
+            [43.12605, 23.12107],
+            [43.12504, 23.12244],
+            [43.12279, 23.12347],
+            [43.12279, 23.12485],
+            [43.12229, 23.12519],
+            [43.12128, 23.12450],
+            [43.12128, 23.12519],
             [43.12003, 23.12759],
             [43.11803, 23.12759],
             [43.11502, 23.13309],
