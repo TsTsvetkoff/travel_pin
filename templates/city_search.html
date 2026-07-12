@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search by City and Range</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        /* Base styles with mobile-first approach */
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            margin: 0;
+            padding: 15px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            background: #f8f9fa;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px 0;
+        }
+        
+        .header h1 {
+            color: #2c3e50;
+            margin: 0 0 10px 0;
+            font-size: 2em;
+            font-weight: 600;
+        }
+        
+        .header p {
+            color: #6c757d;
+            margin: 0;
+            font-size: 1.1em;
+        }
+        
+        .city-search-form {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border: 1px solid #e9ecef;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #495057;
+            font-size: 16px;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            background: #fff;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+        }
+        
+        .search-button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+        }
+        
+        .search-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3);
+        }
+        
+        .search-button:active {
+            transform: translateY(0);
+        }
+        
+        .info-box {
+            background: #e3f2fd;
+            border: 1px solid #bbdefb;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 20px;
+            color: #1565c0;
+            font-size: 14px;
+        }
+        
+        .error-box {
+            background: #ffebee;
+            border: 1px solid #ffcdd2;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 20px;
+            color: #c62828;
+            font-weight: 500;
+        }
+        
+        .results-section {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border: 1px solid #e9ecef;
+        }
+        
+        .results-header {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e9ecef;
+        }
+        
+        .results-header h2 {
+            color: #2c3e50;
+            margin: 0 0 5px 0;
+            font-size: 1.5em;
+        }
+        
+        .results-count {
+            color: #6c757d;
+            font-size: 14px;
+        }
+        
+        .results-grid {
+            display: grid;
+            gap: 15px;
+        }
+        
+        .result-card {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .result-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .result-card.nto {
+            background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+            border-color: #ffc107;
+        }
+        
+        .result-name {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .result-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .result-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+        
+        .category-badge {
+            background: #e3f2fd;
+            color: #1565c0;
+        }
+        
+        .nto-badge {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        .distance-badge {
+            background: #e8f5e8;
+            color: #2e7d32;
+            font-weight: 600;
+        }
+        
+        .no-results {
+            text-align: center;
+            padding: 40px 20px;
+            color: #6c757d;
+        }
+        
+        .no-results-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+            opacity: 0.5;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: white;
+            color: #007bff;
+            text-decoration: none;
+            border-radius: 8px;
+            border: 2px solid #007bff;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .back-link:hover {
+            background: #007bff;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+        }
+        
+        .back-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        /* Tablet and desktop styles */
+        @media (min-width: 768px) {
+            body {
+                padding: 30px;
+            }
+            
+            .city-search-form {
+                max-width: 500px;
+                margin: 0 auto 30px auto;
+            }
+            
+            .form-row {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+            
+            .search-button {
+                width: auto;
+                padding: 15px 40px;
+                margin: 0 auto;
+                display: block;
+            }
+            
+            .results-grid {
+                grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .results-grid {
+                grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏛️ Search by City & Range</h1>
+            <p>Find tourist sites within a specific distance from any Bulgarian city</p>
+        </div>
+        
+        <div class="city-search-form">
+            <form method="post">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="city">City Name</label>
+                        <input type="text" id="city" name="city" value="{{ city }}" placeholder="e.g., София, Пловдив, Варна" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="km">Range (km)</label>
+                        <input type="number" id="km" name="km" min="1" max="500" value="{{ km }}" placeholder="e.g., 50" required>
+                    </div>
+                </div>
+                <button type="submit" class="search-button">🔍 Search Tourist Sites</button>
+            </form>
+            
+            <div class="info-box">
+                💡 <strong>How it works:</strong> Enter a Bulgarian city name and search radius. The system will locate the city and find all tourist attractions within your specified distance from the city center.
+            </div>
+            
+            {% if error %}
+                <div class="error-box">
+                    ⚠️ {{ error }}
+                </div>
+            {% endif %}
+        </div>
+        
+        {% if results %}
+            <div class="results-section">
+                <div class="results-header">
+                    <h2>🎯 Search Results</h2>
+                    <div class="results-count">Found {{ results|length }} tourist site{{ 's' if results|length != 1 else '' }} near {{ city }}</div>
+                </div>
+                
+                <div class="results-grid">
+                    {% for loc, dist in results %}
+                        <div class="result-card {% if loc[5] %}nto{% endif %}">
+                            <div class="result-name">{{ loc[1] }}</div>
+                            <div class="result-details">
+                                <span class="result-badge category-badge">{{ loc[4] }}</span>
+                                <span class="result-badge nto-badge">{{ '100 НТО' if loc[5] else 'Regular' }}</span>
+                                <span class="result-badge distance-badge">{{ dist }} km away</span>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% elif results is not none and not error %}
+            <div class="results-section">
+                <div class="no-results">
+                    <div class="no-results-icon">🔍</div>
+                    <h3>No tourist sites found</h3>
+                    <p>Try expanding your search radius or checking a different city name.</p>
+                </div>
+            </div>
+        {% endif %}
+        
+        <div class="back-container">
+            <a href="{{ url_for('index') }}" class="back-link">
+                ← Back to Main Map
+            </a>
+        </div>
+    </div>
+</body>
+</html>

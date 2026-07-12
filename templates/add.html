@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Location</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Add New Location</h1>
+    <form method="post">
+        <label>Location Name (Bulgarian):</label>
+        <input type="text" name="name_bg" required><br>
+        <label>Coordinates (latitude, longitude):</label>
+        <small>
+            (Get coordinates from
+            <a href="https://nominatim.openstreetmap.org/ui/search.html" target="_blank" rel="noopener noreferrer">
+                OpenStreetMap Search
+            </a>)
+        </small><br>
+        <input type="text" name="coordinates" pattern="^-?\d+(\.\d+)?\s*,\s*-?\d+(\.\d+)?$" required placeholder="43.993183, 22.886818"><br>
+        <label>Category (Bulgarian):</label>
+        <select name="category_bg" required>
+            {% for cat in bg_categories %}
+                <option value="{{ cat }}">{{ cat }}</option>
+            {% endfor %}
+        </select><br>
+        <label>100 НТО:</label>
+        <input type="checkbox" name="sto_nto"><br>
+        <button type="submit">Add Location</button>
+    </form>
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>
