@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Search by City and Range</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./static/style.css">
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            padding: 15px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            background: #f8f9fa;
+            color: #333;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; }
+
+        .header { text-align: center; margin-bottom: 30px; padding: 20px 0; }
+        .header h1 { color: #2c3e50; margin: 0 0 10px 0; font-size: 2em; font-weight: 600; }
+        .header p { color: #6c757d; margin: 0; font-size: 1.1em; }
+
+        .city-search-form {
+            background: white; border-radius: 12px; padding: 25px;
+            margin-bottom: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border: 1px solid #e9ecef;
+        }
+
+        .form-group { margin-bottom: 20px; }
+        .form-group label {
+            display: block; font-weight: 600; margin-bottom: 8px;
+            color: #495057; font-size: 16px;
+        }
+        .form-group input {
+            width: 100%; padding: 12px 16px; border: 2px solid #e9ecef;
+            border-radius: 8px; font-size: 16px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease; background: #fff;
+        }
+        .form-group input:focus {
+            outline: none; border-color: #007bff;
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+        }
+
+        .search-button {
+            width: 100%; padding: 15px;
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: white; border: none; border-radius: 8px;
+            font-size: 16px; font-weight: 600; cursor: pointer;
+            transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+        }
+        .search-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3);
+        }
+        .search-button:active { transform: translateY(0); }
+        .search-button[disabled] { opacity: 0.6; cursor: progress; transform: none; }
+
+        .info-box {
+            background: #e3f2fd; border: 1px solid #bbdefb; border-radius: 8px;
+            padding: 15px; margin-top: 20px; color: #1565c0; font-size: 14px;
+        }
+        .error-box {
+            background: #ffebee; border: 1px solid #ffcdd2; border-radius: 8px;
+            padding: 15px; margin-top: 20px; color: #c62828; font-weight: 500;
+        }
+
+        .results-section {
+            background: white; border-radius: 12px; padding: 25px;
+            margin-bottom: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border: 1px solid #e9ecef;
+        }
+        .results-header {
+            margin-bottom: 20px; padding-bottom: 15px;
+            border-bottom: 2px solid #e9ecef;
+        }
+        .results-header h2 { color: #2c3e50; margin: 0 0 5px 0; font-size: 1.5em; }
+        .results-count { color: #6c757d; font-size: 14px; }
+
+        .results-grid { display: grid; gap: 15px; }
+        .result-card {
+            background: #f8f9fa; border: 1px solid #e9ecef;
+            border-radius: 8px; padding: 20px; transition: all 0.3s ease;
+        }
+        .result-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .result-card.nto {
+            background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+            border-color: #ffc107;
+        }
+        .result-name { font-size: 1.2em; font-weight: 600; color: #2c3e50; margin-bottom: 10px; }
+        .result-details { display: flex; flex-wrap: wrap; gap: 15px; align-items: center; }
+        .result-badge {
+            padding: 4px 12px; border-radius: 20px;
+            font-size: 12px; font-weight: 500; text-transform: uppercase;
+        }
+        .category-badge { background: #e3f2fd; color: #1565c0; }
+        .nto-badge { background: #fff3cd; color: #856404; }
+        .distance-badge { background: #e8f5e8; color: #2e7d32; font-weight: 600; }
+
+        .no-results { text-align: center; padding: 40px 20px; color: #6c757d; }
+        .no-results-icon { font-size: 3em; margin-bottom: 15px; opacity: 0.5; }
+
+        .back-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 12px 24px; background: white; color: #007bff;
+            text-decoration: none; border-radius: 8px;
+            border: 2px solid #007bff; font-weight: 500;
+            transition: all 0.3s ease; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .back-link:hover {
+            background: #007bff; color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+        }
+        .back-container { text-align: center; margin-top: 30px; }
+
+        @media (min-width: 768px) {
+            body { padding: 30px; }
+            .city-search-form { max-width: 500px; margin: 0 auto 30px auto; }
+            .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+            .search-button { width: auto; padding: 15px 40px; margin: 0 auto; display: block; }
+            .results-grid { grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); }
+        }
+        @media (min-width: 1024px) {
+            .results-grid { grid-template-columns: repeat(auto-fill, minmax(450px, 1fr)); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏛️ Search by City &amp; Range</h1>
+            <p>Find tourist sites within a specific distance from any Bulgarian city</p>
+        </div>
+
+        <div class="city-search-form">
+            <form id="searchForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="city">City Name</label>
+                        <input type="text" id="city" name="city" value="" placeholder="e.g., София, Пловдив, Варна" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="km">Range (km)</label>
+                        <input type="number" id="km" name="km" min="1" max="500" value="" placeholder="e.g., 50" required>
+                    </div>
+                </div>
+                <button type="submit" class="search-button" id="searchBtn">🔍 Search Tourist Sites</button>
+            </form>
+
+            <div class="info-box">
+                💡 <strong>How it works:</strong> Enter a Bulgarian city name and search radius. Your browser geocodes the city via Nominatim and finds all tourist attractions within your specified distance.
+            </div>
+
+            <div id="errorBox" class="error-box" style="display: none;"></div>
+        </div>
+
+        <div id="resultsSection" class="results-section" style="display: none;">
+            <div class="results-header">
+                <h2>🎯 Search Results</h2>
+                <div class="results-count" id="resultsCount"></div>
+            </div>
+            <div id="resultsGrid" class="results-grid"></div>
+        </div>
+
+        <div id="noResults" class="results-section" style="display: none;">
+            <div class="no-results">
+                <div class="no-results-icon">🔍</div>
+                <h3>No tourist sites found</h3>
+                <p>Try expanding your search radius or checking a different city name.</p>
+            </div>
+        </div>
+
+        <div class="back-container">
+            <a href="./index.html" class="back-link">← Back to Main Map</a>
+        </div>
+    </div>
+
+    <script>
+    (function () {
+      'use strict';
+
+      // Same haversine used in app.py.
+      function haversine(lat1, lon1, lat2, lon2) {
+        var R = 6371;
+        var toRad = function (d) { return d * Math.PI / 180; };
+        var dLat = toRad(lat2 - lat1);
+        var dLon = toRad(lon2 - lon1);
+        var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *
+                Math.sin(dLon / 2) * Math.sin(dLon / 2);
+        var c = 2 * Math.asin(Math.sqrt(a));
+        return R * c;
+      }
+
+      function escapeHtml(s) {
+        return String(s).replace(/[&<>"']/g, function (c) {
+          return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c];
+        });
+      }
+
+      function showError(msg) {
+        var box = document.getElementById('errorBox');
+        box.textContent = '⚠️ ' + msg;
+        box.style.display = 'block';
+        document.getElementById('resultsSection').style.display = 'none';
+        document.getElementById('noResults').style.display = 'none';
+      }
+
+      function hideError() {
+        document.getElementById('errorBox').style.display = 'none';
+      }
+
+      function renderResults(results, cityQuery) {
+        var section = document.getElementById('resultsSection');
+        var grid = document.getElementById('resultsGrid');
+        var count = document.getElementById('resultsCount');
+        var noResults = document.getElementById('noResults');
+
+        if (!results.length) {
+          section.style.display = 'none';
+          noResults.style.display = 'block';
+          return;
+        }
+        noResults.style.display = 'none';
+        section.style.display = 'block';
+        count.textContent = 'Found ' + results.length +
+          ' tourist site' + (results.length === 1 ? '' : 's') +
+          ' near ' + cityQuery;
+
+        grid.innerHTML = results.map(function (r) {
+          return '<div class="result-card ' + (r.loc.sto_nto ? 'nto' : '') + '">' +
+                   '<div class="result-name">' + escapeHtml(r.loc.name_bg) + '</div>' +
+                   '<div class="result-details">' +
+                     '<span class="result-badge category-badge">' + escapeHtml(r.loc.category) + '</span>' +
+                     '<span class="result-badge nto-badge">' + (r.loc.sto_nto ? '100 НТО' : 'Regular') + '</span>' +
+                     '<span class="result-badge distance-badge">' + r.dist.toFixed(2) + ' km away</span>' +
+                   '</div>' +
+                 '</div>';
+        }).join('');
+      }
+
+      function normalizeCity(input) {
+        var v = input.trim();
+        if (v.toLowerCase() === 'софия') return 'София-град';
+        if (!v.toLowerCase().startsWith('град ')) return 'град ' + v;
+        return v;
+      }
+
+      function search() {
+        hideError();
+        var cityInput = document.getElementById('city');
+        var kmInput = document.getElementById('km');
+        var btn = document.getElementById('searchBtn');
+
+        var cityQuery = cityInput.value.trim();
+        var km = parseFloat(kmInput.value);
+        if (!cityQuery || !km) {
+          showError('Please provide both city and range.');
+          return;
+        }
+        if (!isFinite(km) || km <= 0) {
+          showError('Range must be a positive number.');
+          return;
+        }
+
+        var city = normalizeCity(cityQuery);
+        btn.disabled = true;
+        btn.textContent = '⏳ Searching…';
+
+        var geocodeUrl = 'https://nominatim.openstreetmap.org/search?' + new URLSearchParams({
+          q: city,
+          format: 'json',
+          limit: '1',
+          // countrycodes=bg keeps the match inside Bulgaria — without it
+          // "Варна" resolves to a town in Chelyabinsk Oblast, Russia.
+          countrycodes: 'bg',
+        }).toString();
+
+        fetch(geocodeUrl, { headers: { 'Accept': 'application/json' } })
+          .then(function (r) { return r.json(); })
+          .then(function (data) {
+            if (!data || !data.length) {
+              showError('City "' + city + '" not found.');
+              return null;
+            }
+            var cityLat = parseFloat(data[0].lat);
+            var cityLon = parseFloat(data[0].lon);
+            return fetch('./locations.json').then(function (r) { return r.json(); })
+              .then(function (locations) {
+                var results = [];
+                locations.forEach(function (loc) {
+                  var d = haversine(cityLat, cityLon, loc.latitude, loc.longitude);
+                  if (d <= km) results.push({ loc: loc, dist: d });
+                });
+                results.sort(function (a, b) { return a.dist - b.dist; });
+                renderResults(results, cityQuery);
+              });
+          })
+          .catch(function (err) {
+            showError('Error: ' + (err && err.message || String(err)));
+          })
+          .finally(function () {
+            btn.disabled = false;
+            btn.textContent = '🔍 Search Tourist Sites';
+          });
+      }
+
+      document.getElementById('searchForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        search();
+      });
+    })();
+    </script>
+</body>
+</html>

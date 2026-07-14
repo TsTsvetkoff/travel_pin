@@ -1,0 +1,3178 @@
+[
+  {
+    "id": 1,
+    "name_bg": "Музей крепост Баба Вида",
+    "latitude": 43.993183,
+    "longitude": 22.886818,
+    "category": "Fortress",
+    "sto_nto": 1
+  },
+  {
+    "id": 2,
+    "name_bg": "Пещера Магура",
+    "latitude": 43.727842,
+    "longitude": 22.5826747,
+    "category": "Cave",
+    "sto_nto": 1
+  },
+  {
+    "id": 3,
+    "name_bg": "Белоградчишки скали и крепост",
+    "latitude": 43.62304885,
+    "longitude": 22.678464345467248,
+    "category": "Park / Landmark",
+    "sto_nto": 1
+  },
+  {
+    "id": 4,
+    "name_bg": "Чипровски манастир \"Св. Иван Рилски\"",
+    "latitude": 43.4038564,
+    "longitude": 22.9341622,
+    "category": "Monastery",
+    "sto_nto": 0
+  },
+  {
+    "id": 5,
+    "name_bg": "връх Ком (х2)",
+    "latitude": 43.1738828,
+    "longitude": 23.0520955,
+    "category": "Peak",
+    "sto_nto": 1
+  },
+  {
+    "id": 6,
+    "name_bg": "Клисурски манастир \"Св. св. Кирил и Методий\"",
+    "latitude": 43.18270165,
+    "longitude": 23.20498327704184,
+    "category": "Monastery",
+    "sto_nto": 0
+  },
+  {
+    "id": 7,
+    "name_bg": "Национален музей-параход \"Радецки\"",
+    "latitude": 43.794470863437034,
+    "longitude": 23.690142543632312,
+    "category": "Museum",
+    "sto_nto": 1
+  },
+  {
+    "id": 8,
+    "name_bg": "Паметник на Христо Ботев - Околчица",
+    "latitude": 43.1511319,
+    "longitude": 23.583788,
+    "category": "Park / Landmark",
+    "sto_nto": 1
+  },
+  {
+    "id": 9,
+    "name_bg": "Вратцата",
+    "latitude": 43.19151075,
+    "longitude": 23.530539561655402,
+    "category": "Rock Formation",
+    "sto_nto": 0
+  },
+  {
+    "id": 10,
+    "name_bg": "Пещера \"Леденика\"",
+    "latitude": 43.2044299,
+    "longitude": 23.4936627,
+    "category": "Cave",
+    "sto_nto": 1
+  },
+  {
+    "id": 11,
+    "name_bg": "Къща музей \"Баба Илийца\"",
+    "latitude": 43.131577,
+    "longitude": 23.6089865,
+    "category": "Museum",
+    "sto_nto": 0
+  },
+  {
+    "id": 12,
+    "name_bg": "Черепишки манастир \"Успение Богородично\"",
+    "latitude": 43.0936832,
+    "longitude": 23.6158608,
+    "category": "Monastery",
+    "sto_nto": 0
+  },
+  {
+    "id": 13,
+    "name_bg": "Ритлите (x2)",
+    "latitude": 43.10762555,
+    "longitude": 23.614701207454615,
+    "category": "Rock Formation",
+    "sto_nto": 0
+  },
+  {
+    "id": 14,
+    "name_bg": "Манастир \"Седемте престола\"",
+    "latitude": 42.99763445,
+    "longitude": 23.471329591073395,
+    "category": "Monastery",
+    "sto_nto": 1
+  },
+  {
+    "id": 15,
+    "name_bg": "Божи мост",
+    "latitude": 43.3152703,
+    "longitude": 23.5519929,
+    "category": "Rock Formation",
+    "sto_nto": 0
+  },
+  {
+    "id": 16,
+    "name_bg": "Драгоманско блато",
+    "latitude": 42.93071035,
+    "longitude": 22.96242442553232,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 17,
+    "name_bg": "исторически музей Ботевград",
+    "latitude": 42.906634249999996,
+    "longitude": 23.7927473,
+    "category": "Museum",
+    "sto_nto": 1
+  },
+  {
+    "id": 18,
+    "name_bg": "Часовникова кула",
+    "latitude": 42.907967,
+    "longitude": 23.7924967,
+    "category": "Park / Landmark",
+    "sto_nto": 1
+  },
+  {
+    "id": 19,
+    "name_bg": "Скравенски манастир \"Св. Николай Летни\"",
+    "latitude": 42.9696607,
+    "longitude": 23.78150505761351,
+    "category": "Monastery",
+    "sto_nto": 1
+  },
+  {
+    "id": 20,
+    "name_bg": "Пещера \"Проходна\" (x2)",
+    "latitude": 43.1753394,
+    "longitude": 24.0757716,
+    "category": "Cave",
+    "sto_nto": 0
+  },
+  {
+    "id": 21,
+    "name_bg": "Екопътека Искър-Панега",
+    "latitude": 43.18775155,
+    "longitude": 24.14697827685005,
+    "category": "Gorge / Eco Trail",
+    "sto_nto": 0
+  },
+  {
+    "id": 22,
+    "name_bg": "Национален пещерен дом – Карлуково",
+    "latitude": 43.180483,
+    "longitude": 24.0710074,
+    "category": "Museum",
+    "sto_nto": 1
+  },
+  {
+    "id": 23,
+    "name_bg": "Скален манастир \"Св. Никола (Глигора)\"",
+    "latitude": 43.1798308,
+    "longitude": 24.0706104,
+    "category": "Monastery",
+    "sto_nto": 0
+  },
+  {
+    "id": 24,
+    "name_bg": "Провъртеникът",
+    "latitude": 43.2010608,
+    "longitude": 24.0610172,
+    "category": "Rock Formation",
+    "sto_nto": 0
+  },
+  {
+    "id": 25,
+    "name_bg": "Каменните къщи",
+    "latitude": 43.1994797,
+    "longitude": 24.0678169,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 26,
+    "name_bg": "Златният парк",
+    "latitude": 43.1992174,
+    "longitude": 24.1576925,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 27,
+    "name_bg": "Пещера \"Съева дупка\"",
+    "latitude": 43.046989,
+    "longitude": 24.1861069,
+    "category": "Cave",
+    "sto_nto": 1
+  },
+  {
+    "id": 28,
+    "name_bg": "Гложенски манастир \"Св. Георги Победоносец\"",
+    "latitude": 42.9756484,
+    "longitude": 24.169397603087646,
+    "category": "Monastery",
+    "sto_nto": 0
+  },
+  {
+    "id": 29,
+    "name_bg": "Исторически мост на победата над река Вит",
+    "latitude": 43.43204026124585,
+    "longitude": 24.548849195764422,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 30,
+    "name_bg": "Язовир Тотлебенов вал",
+    "latitude": 43.35259715,
+    "longitude": 24.637378940198033,
+    "category": "Lake / Reservoir",
+    "sto_nto": 0
+  },
+  {
+    "id": 31,
+    "name_bg": "Възстановка освобождението на Плевен",
+    "latitude": 43.4320981,
+    "longitude": 24.5486191,
+    "category": "Event",
+    "sto_nto": 0
+  },
+  {
+    "id": 32,
+    "name_bg": "Цепен камък",
+    "latitude": 43.3246991,
+    "longitude": 24.5495774,
+    "category": "Rock Formation",
+    "sto_nto": 0
+  },
+  {
+    "id": 33,
+    "name_bg": "Екопътека \"Чернелка\"",
+    "latitude": 43.3246991,
+    "longitude": 24.5495774,
+    "category": "Gorge / Eco Trail",
+    "sto_nto": 0
+  },
+  {
+    "id": 34,
+    "name_bg": "Панорама \"Плевенска епопея 1877г.\"",
+    "latitude": 43.3991888,
+    "longitude": 24.60689,
+    "category": "Museum",
+    "sto_nto": 1
+  },
+  {
+    "id": 35,
+    "name_bg": "Късноантична римска крепост Сторгозия",
+    "latitude": 43.3830259,
+    "longitude": 24.6286721,
+    "category": "Fortress",
+    "sto_nto": 0
+  },
+  {
+    "id": 36,
+    "name_bg": "Зоопарк \"Кайлъка\"",
+    "latitude": 43.383110099999996,
+    "longitude": 24.632699799999997,
+    "category": "Zoo",
+    "sto_nto": 0
+  },
+  {
+    "id": 37,
+    "name_bg": "Музей на виното",
+    "latitude": 43.3572662,
+    "longitude": 24.6356153,
+    "category": "Museum",
+    "sto_nto": 0
+  },
+  {
+    "id": 38,
+    "name_bg": "Природен парк \"Кайлъка\"",
+    "latitude": 43.3633034,
+    "longitude": 24.630464,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 39,
+    "name_bg": "Къща музей \"Цар Освободител Александър ІІ\"",
+    "latitude": 43.411975899999995,
+    "longitude": 24.6168153,
+    "category": "Museum",
+    "sto_nto": 0
+  },
+  {
+    "id": 40,
+    "name_bg": "Мавзолей-параклис \"Св. Георги Победоносец\"",
+    "latitude": 43.4074129,
+    "longitude": 24.6195631,
+    "category": "Museum",
+    "sto_nto": 0
+  },
+  {
+    "id": 41,
+    "name_bg": "Регионален исторически музей",
+    "latitude": 43.4038377,
+    "longitude": 24.6184445,
+    "category": "Museum",
+    "sto_nto": 1
+  },
+  {
+    "id": 42,
+    "name_bg": "Художествена галерия \"Илия Бешков\"",
+    "latitude": 43.4030312,
+    "longitude": 24.6162998,
+    "category": "Museum",
+    "sto_nto": 0
+  },
+  {
+    "id": 43,
+    "name_bg": "Пещера стълбицата",
+    "latitude": 43.2175712,
+    "longitude": 24.9733206,
+    "category": "Cave",
+    "sto_nto": 0
+  },
+  {
+    "id": 44,
+    "name_bg": "Деветашка пещера",
+    "latitude": 43.2334437,
+    "longitude": 24.8854118,
+    "category": "Cave",
+    "sto_nto": 0
+  },
+  {
+    "id": 45,
+    "name_bg": "Крушунски водопади",
+    "latitude": 43.2432079,
+    "longitude": 25.0332311,
+    "category": "Waterfall",
+    "sto_nto": 0
+  },
+  {
+    "id": 46,
+    "name_bg": "Зоопарк Ловеч",
+    "latitude": 43.13905415,
+    "longitude": 24.728935641400028,
+    "category": "Zoo",
+    "sto_nto": 0
+  },
+  {
+    "id": 47,
+    "name_bg": "Покритият мост",
+    "latitude": 43.13236875,
+    "longitude": 24.71658887273453,
+    "category": "Park / Landmark",
+    "sto_nto": 1
+  },
+  {
+    "id": 48,
+    "name_bg": "Архитектурно-исторически резерват \"Вароша\" ",
+    "latitude": 43.1300307,
+    "longitude": 24.7164488,
+    "category": "AIR",
+    "sto_nto": 0
+  },
+  {
+    "id": 49,
+    "name_bg": "Крепост Хисаря",
+    "latitude": 43.1278866,
+    "longitude": 24.7156468,
+    "category": "Fortress",
+    "sto_nto": 1
+  },
+  {
+    "id": 50,
+    "name_bg": "Музей „Къкринско ханче“",
+    "latitude": 43.124749550000004,
+    "longitude": 24.884433959893016,
+    "category": "Museum",
+    "sto_nto": 1
+  },
+  {
+    "id": 51,
+    "name_bg": "Каньонът на река Негованка / Емен",
+    "latitude": 43.1422526,
+    "longitude": 25.36784714093385,
+    "category": "Gorge / Eco Trail",
+    "sto_nto": 0
+  },
+  {
+    "id": 52,
+    "name_bg": "Момин скок",
+    "latitude": 43.141616,
+    "longitude": 25.3691075,
+    "category": "Waterfall",
+    "sto_nto": 0
+  },
+  {
+    "id": 53,
+    "name_bg": "Зараповски водопад",
+    "latitude": 43.1508323,
+    "longitude": 25.3282988,
+    "category": "Waterfall",
+    "sto_nto": 0
+  },
+  {
+    "id": 54,
+    "name_bg": "Парк \"Калето\" и Слънчевият часовник",
+    "latitude": 43.621542500000004,
+    "longitude": 25.344800690874052,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 55,
+    "name_bg": "Къща-музей \"Алеко Константинов\"",
+    "latitude": 43.6205498,
+    "longitude": 25.3400451,
+    "category": "Museum",
+    "sto_nto": 1
+  },
+  {
+    "id": 56,
+    "name_bg": "Мостът на Колю Фичето на река Янтра",
+    "latitude": 43.46951315,
+    "longitude": 25.724345771957847,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 57,
+    "name_bg": "Хотнишки водопад и екопътека",
+    "latitude": 43.141987,
+    "longitude": 25.511483332571714,
+    "category": "Waterfall",
+    "sto_nto": 0
+  },
+  {
+    "id": 58,
+    "name_bg": "Археологически резерват Никополис ад Иструм",
+    "latitude": 43.2176269,
+    "longitude": 25.61163314786536,
+    "category": "AIR",
+    "sto_nto": 0
+  },
+  {
+    "id": 59,
+    "name_bg": "Шоу - звук и светлина",
+    "latitude": 43.08083225,
+    "longitude": 25.648339116003243,
+    "category": "Event",
+    "sto_nto": 0
+  },
+  {
+    "id": 60,
+    "name_bg": "3D mapping show",
+    "latitude": 43.080918,
+    "longitude": 25.6453233,
+    "category": "Event",
+    "sto_nto": 0
+  },
+  {
+    "id": 61,
+    "name_bg": "Преображенски манастир \"Преображение Господне\"",
+    "latitude": 43.116831899999994,
+    "longitude": 25.606885175670968,
+    "category": "Monastery",
+    "sto_nto": 0
+  },
+  {
+    "id": 62,
+    "name_bg": "Арбанашкият манастир \"Св. Богородица”",
+    "latitude": 43.097715550000004,
+    "longitude": 25.659407076913404,
+    "category": "Monastery",
+    "sto_nto": 0
+  },
+  {
+    "id": 63,
+    "name_bg": "Крепостта Царевец",
+    "latitude": 43.0835941,
+    "longitude": 25.652447896528514,
+    "category": "Fortress",
+    "sto_nto": 1
+  },
+  {
+    "id": 64,
+    "name_bg": "Средновековен град-крепост Червен",
+    "latitude": 43.622794049999996,
+    "longitude": 26.02156777879609,
+    "category": "AIR",
+    "sto_nto": 0
+  },
+  {
+    "id": 65,
+    "name_bg": "Скален манастир „Св. Димитрий Басарбовски”",
+    "latitude": 43.7666488,
+    "longitude": 25.964866343487472,
+    "category": "Monastery",
+    "sto_nto": 0
+  },
+  {
+    "id": 66,
+    "name_bg": "Ивановски скални църкви",
+    "latitude": 43.6985811,
+    "longitude": 25.9876582566752,
+    "category": "Monastery",
+    "sto_nto": 0
+  },
+  {
+    "id": 67,
+    "name_bg": "Пантеон на Възрожденците",
+    "latitude": 43.85066745,
+    "longitude": 25.960813357590293,
+    "category": "Museum",
+    "sto_nto": 1
+  },
+  {
+    "id": 68,
+    "name_bg": "Музей на Дунавския риболов и лодкостроене",
+    "latitude": 44.0493488,
+    "longitude": 26.60800885583295,
+    "category": "Museum",
+    "sto_nto": 1
+  },
+  {
+    "id": 69,
+    "name_bg": "Резерват \"Сребърна\"",
+    "latitude": 44.11141045,
+    "longitude": 27.0702375223572,
+    "category": "Park / Landmark",
+    "sto_nto": 1
+  },
+  {
+    "id": 70,
+    "name_bg": "крепост Меджиди Табия",
+    "latitude": 44.1022625,
+    "longitude": 27.256810268096572,
+    "category": "Fortress",
+    "sto_nto": 1
+  },
+  {
+    "id": 71,
+    "name_bg": "Художествена галерия",
+    "latitude": 43.8433755,
+    "longitude": 25.954953563508802,
+    "category": "Museum",
+    "sto_nto": 1
+  },
+  {
+    "id": 72,
+    "name_bg": "Археологически резерват \"Абритус\"",
+    "latitude": 43.5241238,
+    "longitude": 26.550814302092277,
+    "category": "AIR",
+    "sto_nto": 1
+  },
+  {
+    "id": 73,
+    "name_bg": "Демир Баба теке",
+    "latitude": 43.73860265,
+    "longitude": 26.752067495255474,
+    "category": "Monastery",
+    "sto_nto": 1
+  },
+  {
+    "id": 74,
+    "name_bg": "Тракийски град крепост Хелис",
+    "latitude": 43.7393673,
+    "longitude": 26.7579725,
+    "category": "Fortress",
+    "sto_nto": 0
+  },
+  {
+    "id": 75,
+    "name_bg": "Плиска",
+    "latitude": 43.386698800000005,
+    "longitude": 27.130666111367347,
+    "category": "AIR",
+    "sto_nto": 1
+  },
+  {
+    "id": 76,
+    "name_bg": "Залив Болата",
+    "latitude": 43.3823327,
+    "longitude": 28.470033547989694,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 77,
+    "name_bg": "нос Калиакра",
+    "latitude": 43.3603744,
+    "longitude": 28.4652226,
+    "category": "Fortress",
+    "sto_nto": 1
+  },
+  {
+    "id": 78,
+    "name_bg": "Архитектурно-парков комплекс „Двореца“ (x2)",
+    "latitude": 43.4077781,
+    "longitude": 28.1481802,
+    "category": "AIR",
+    "sto_nto": 1
+  },
+  {
+    "id": 79,
+    "name_bg": "Аладжа манастир",
+    "latitude": 43.2779995,
+    "longitude": 28.0151088,
+    "category": "Monastery",
+    "sto_nto": 0
+  },
+  {
+    "id": 80,
+    "name_bg": "Военноисторически музей",
+    "latitude": 43.2005425,
+    "longitude": 27.9215894,
+    "category": "Museum",
+    "sto_nto": 1
+  },
+  {
+    "id": 81,
+    "name_bg": "Музей на мозайките",
+    "latitude": 43.225396,
+    "longitude": 27.5848827,
+    "category": "Museum",
+    "sto_nto": 1
+  },
+  {
+    "id": 82,
+    "name_bg": "Побити камъни",
+    "latitude": 43.25274175,
+    "longitude": 27.697927098244996,
+    "category": "Rock Formation",
+    "sto_nto": 0
+  },
+  {
+    "id": 83,
+    "name_bg": "Яйлата",
+    "latitude": 43.4302146,
+    "longitude": 28.536453150090907,
+    "category": "AIR",
+    "sto_nto": 0
+  },
+  {
+    "id": 84,
+    "name_bg": "Арката",
+    "latitude": 43.49237933517445,
+    "longitude": 28.58518690177874,
+    "category": "Rock Formation",
+    "sto_nto": 0
+  },
+  {
+    "id": 85,
+    "name_bg": "Шабленски фар",
+    "latitude": 43.5401767,
+    "longitude": 28.6069834,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 86,
+    "name_bg": "Художествена галерия",
+    "latitude": 43.56835365,
+    "longitude": 27.82644616534457,
+    "category": "Museum",
+    "sto_nto": 1
+  },
+  {
+    "id": 87,
+    "name_bg": "Язовир Искър",
+    "latitude": 42.46246895,
+    "longitude": 23.5799919297406,
+    "category": "Lake / Reservoir",
+    "sto_nto": 0
+  },
+  {
+    "id": 88,
+    "name_bg": "Крепост \"Траянови врата\"",
+    "latitude": 42.3566946,
+    "longitude": 23.922518485741186,
+    "category": "Fortress",
+    "sto_nto": 0
+  },
+  {
+    "id": 89,
+    "name_bg": "Костенски водопад (x2)",
+    "latitude": 42.2484229,
+    "longitude": 23.8050212,
+    "category": "Waterfall",
+    "sto_nto": 0
+  },
+  {
+    "id": 90,
+    "name_bg": "Мемориален комплекс \"Васил Левски\"",
+    "latitude": 42.702722,
+    "longitude": 23.925001089360222,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 91,
+    "name_bg": "Църква \"Успение на св. Богородица\"",
+    "latitude": 42.328644499999996,
+    "longitude": 23.5638398604435,
+    "category": "Monastery",
+    "sto_nto": 1
+  },
+  {
+    "id": 92,
+    "name_bg": "Цари Мали Град (x2)",
+    "latitude": 42.353995049999995,
+    "longitude": 23.38191083083855,
+    "category": "Fortress",
+    "sto_nto": 0
+  },
+  {
+    "id": 93,
+    "name_bg": "Язовир \"Панчарево\"",
+    "latitude": 42.5944232,
+    "longitude": 23.4184025,
+    "category": "Lake / Reservoir",
+    "sto_nto": 0
+  },
+  {
+    "id": 94,
+    "name_bg": "Комплекс \"Камбаните\"",
+    "latitude": 42.618406949999994,
+    "longitude": 23.37929201716509,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 95,
+    "name_bg": "Парк \"Врана\" - Дворцов комплекс ",
+    "latitude": 42.64095615,
+    "longitude": 23.432757289806442,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 96,
+    "name_bg": "Връх Черни връх (х4)",
+    "latitude": 42.5630927,
+    "longitude": 23.2793407,
+    "category": "Peak",
+    "sto_nto": 1
+  },
+  {
+    "id": 97,
+    "name_bg": "Скален феномен \"Златните мостове\"",
+    "latitude": 42.6083708,
+    "longitude": 23.24471657937425,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 98,
+    "name_bg": "Телевизионна кула \"Копитото\"",
+    "latitude": 42.6371234,
+    "longitude": 23.2439917,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 99,
+    "name_bg": "Боянски водопад",
+    "latitude": 42.6296174,
+    "longitude": 23.2543256,
+    "category": "Waterfall",
+    "sto_nto": 0
+  },
+  {
+    "id": 100,
+    "name_bg": "Боянската църква",
+    "latitude": 42.644623949999996,
+    "longitude": 23.26619455731635,
+    "category": "Monastery",
+    "sto_nto": 0
+  },
+  {
+    "id": 101,
+    "name_bg": "кукерски събор \"Сурва\"",
+    "latitude": 42.60876075,
+    "longitude": 23.030882672154764,
+    "category": "Event",
+    "sto_nto": 0
+  },
+  {
+    "id": 102,
+    "name_bg": "Екопътека \"Пътека на здравето\"",
+    "latitude": 42.68986227130784,
+    "longitude": 23.13971121555071,
+    "category": "Gorge / Eco Trail",
+    "sto_nto": 0
+  },
+  {
+    "id": 103,
+    "name_bg": "Бояснко езеро",
+    "latitude": 42.6358904,
+    "longitude": 23.269250415423578,
+    "category": "Lake / Reservoir",
+    "sto_nto": 0
+  },
+  {
+    "id": 104,
+    "name_bg": "Земенски манастир Св. Йоан Богослов",
+    "latitude": 42.46746735,
+    "longitude": 22.738780527684604,
+    "category": "Monastery",
+    "sto_nto": 0
+  },
+  {
+    "id": 105,
+    "name_bg": "Мегалитен Храм-кладенец",
+    "latitude": 42.7870859,
+    "longitude": 22.8482145,
+    "category": "Sanctuary",
+    "sto_nto": 0
+  },
+  {
+    "id": 106,
+    "name_bg": "Ждрелото на река Ерма (x2)",
+    "latitude": 42.86282115,
+    "longitude": 22.649779570625633,
+    "category": "Park / Landmark",
+    "sto_nto": 1
+  },
+  {
+    "id": 107,
+    "name_bg": "Скална църква \"Св. Петка\"",
+    "latitude": 42.8300909,
+    "longitude": 22.63734134190083,
+    "category": "Monastery",
+    "sto_nto": 0
+  },
+  {
+    "id": 108,
+    "name_bg": "Връх Руй",
+    "latitude": 42.8629089,
+    "longitude": 22.5754274,
+    "category": "Peak",
+    "sto_nto": 0
+  },
+  {
+    "id": 109,
+    "name_bg": "Хижа „Алеко“",
+    "latitude": 42.582349050000005,
+    "longitude": 23.291804290490546,
+    "category": "Hut",
+    "sto_nto": 1
+  },
+  {
+    "id": 110,
+    "name_bg": "Национален археологически институт с музей",
+    "latitude": 42.6963979,
+    "longitude": 23.324578099185864,
+    "category": "Museum",
+    "sto_nto": 1
+  },
+  {
+    "id": 111,
+    "name_bg": "Софийски зоопарк",
+    "latitude": 42.6582061,
+    "longitude": 23.33151559972081,
+    "category": "Zoo",
+    "sto_nto": 1
+  },
+  {
+    "id": 112,
+    "name_bg": "Музей на историята на физическата култура и спорта",
+    "latitude": 42.6881885,
+    "longitude": 23.3346667,
+    "category": "Museum",
+    "sto_nto": 1
+  },
+  {
+    "id": 113,
+    "name_bg": "Национален природонаучен музей при БАН",
+    "latitude": 42.69599575,
+    "longitude": 23.32856156151069,
+    "category": "Museum",
+    "sto_nto": 1
+  },
+  {
+    "id": 114,
+    "name_bg": "Национална художествена галерия",
+    "latitude": 42.6965175,
+    "longitude": 23.3267637,
+    "category": "Museum",
+    "sto_nto": 1
+  },
+  {
+    "id": 115,
+    "name_bg": "Национален дворец на културата",
+    "latitude": 42.6847601,
+    "longitude": 23.3189417,
+    "category": "Museum",
+    "sto_nto": 1
+  },
+  {
+    "id": 116,
+    "name_bg": "Национален музей „Земята и хората“",
+    "latitude": 42.6797867,
+    "longitude": 23.32054400439428,
+    "category": "Museum",
+    "sto_nto": 1
+  },
+  {
+    "id": 117,
+    "name_bg": "Храм-паметник „Свети Александър Невски“ с криптата",
+    "latitude": 42.6958098,
+    "longitude": 23.332786199999997,
+    "category": "Monastery",
+    "sto_nto": 1
+  },
+  {
+    "id": 118,
+    "name_bg": "Национален исторически музей",
+    "latitude": 42.6550407,
+    "longitude": 23.270823099999998,
+    "category": "Museum",
+    "sto_nto": 1
+  },
+  {
+    "id": 119,
+    "name_bg": "гейзерът в Сапарева баня (x2)",
+    "latitude": 42.2878404,
+    "longitude": 23.2577777,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 120,
+    "name_bg": "Кадин мост",
+    "latitude": 42.2562224,
+    "longitude": 22.8536713,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 121,
+    "name_bg": "Художествена галерия \"Владимир Димитров-Майстора\"",
+    "latitude": 42.282952800000004,
+    "longitude": 22.688935516127852,
+    "category": "Museum",
+    "sto_nto": 1
+  },
+  {
+    "id": 122,
+    "name_bg": "Празник на черешата Кюстендил",
+    "latitude": 42.2806747,
+    "longitude": 22.6881087,
+    "category": "Event",
+    "sto_nto": 0
+  },
+  {
+    "id": 123,
+    "name_bg": "Български вековни секвои – местност Ючбунар",
+    "latitude": 42.2512538,
+    "longitude": 22.663969517566073,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 124,
+    "name_bg": "парк Хисарлъка",
+    "latitude": 42.274549699999994,
+    "longitude": 22.691682308832206,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 125,
+    "name_bg": "Връх Руен (х2)",
+    "latitude": 42.1580093,
+    "longitude": 22.5162744,
+    "category": "Peak",
+    "sto_nto": 1
+  },
+  {
+    "id": 126,
+    "name_bg": "АВИОШОУ - \"ТОВА СМЕ НИЕ\"",
+    "latitude": 42.6955647,
+    "longitude": 23.4142083,
+    "category": "Event",
+    "sto_nto": 0
+  },
+  {
+    "id": 127,
+    "name_bg": "Симеоновски езера",
+    "latitude": 42.60204645127092,
+    "longitude": 23.323835312283073,
+    "category": "Lake / Reservoir",
+    "sto_nto": 0
+  },
+  {
+    "id": 128,
+    "name_bg": "Манастир „Света Троица“",
+    "latitude": 42.823207,
+    "longitude": 24.034571303805954,
+    "category": "Monastery",
+    "sto_nto": 0
+  },
+  {
+    "id": 129,
+    "name_bg": "Етрополски водопад - Варовитец",
+    "latitude": 42.8241297,
+    "longitude": 24.0388371,
+    "category": "Waterfall",
+    "sto_nto": 0
+  },
+  {
+    "id": 130,
+    "name_bg": "Часовникова кула",
+    "latitude": 42.829803,
+    "longitude": 23.9927934,
+    "category": "Park / Landmark",
+    "sto_nto": 1
+  },
+  {
+    "id": 131,
+    "name_bg": "Чекотински манастир \"Св. Архангел Михаил\"",
+    "latitude": 42.98971265,
+    "longitude": 23.87429965903648,
+    "category": "Monastery",
+    "sto_nto": 0
+  },
+  {
+    "id": 132,
+    "name_bg": "Исторически музей",
+    "latitude": 42.8305022,
+    "longitude": 23.994092638795564,
+    "category": "Museum",
+    "sto_nto": 1
+  },
+  {
+    "id": 133,
+    "name_bg": "Исторически музей Тетевен",
+    "latitude": 42.9178262,
+    "longitude": 24.2651138,
+    "category": "Museum",
+    "sto_nto": 1
+  },
+  {
+    "id": 134,
+    "name_bg": "Водопад \"Скока\" - Тетевен",
+    "latitude": 42.88990835,
+    "longitude": 24.2507136296161,
+    "category": "Waterfall",
+    "sto_nto": 0
+  },
+  {
+    "id": 135,
+    "name_bg": "Язовир \"Сопот\"",
+    "latitude": 42.64908565,
+    "longitude": 24.77303435064283,
+    "category": "Lake / Reservoir",
+    "sto_nto": 0
+  },
+  {
+    "id": 136,
+    "name_bg": "Шипковски минерални бани",
+    "latitude": 42.8792623,
+    "longitude": 24.5387598,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 137,
+    "name_bg": "Троянски манастир \"Успение Богородично\"",
+    "latitude": 42.861745,
+    "longitude": 24.780713799999997,
+    "category": "Monastery",
+    "sto_nto": 1
+  },
+  {
+    "id": 138,
+    "name_bg": "Водопад \"Видимско пръскало\"",
+    "latitude": 42.7363786,
+    "longitude": 24.9537577,
+    "category": "Waterfall",
+    "sto_nto": 0
+  },
+  {
+    "id": 139,
+    "name_bg": "Природонаучен музей",
+    "latitude": 42.8411091,
+    "longitude": 24.767970599999998,
+    "category": "Museum",
+    "sto_nto": 1
+  },
+  {
+    "id": 140,
+    "name_bg": "\t Географски център на България",
+    "latitude": 42.7660976,
+    "longitude": 25.2384218,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 141,
+    "name_bg": "Зоопарк Габрово",
+    "latitude": 42.88934605,
+    "longitude": 25.31437915121679,
+    "category": "Zoo",
+    "sto_nto": 0
+  },
+  {
+    "id": 142,
+    "name_bg": "Национален парк-музей \"Шипка\"",
+    "latitude": 42.7667103,
+    "longitude": 25.3159106,
+    "category": "Museum",
+    "sto_nto": 1
+  },
+  {
+    "id": 143,
+    "name_bg": "дом паметник на Бузлуджа",
+    "latitude": 42.7357547,
+    "longitude": 25.3932188,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 144,
+    "name_bg": "Соколски манастир \"Успение Богородично\"",
+    "latitude": 42.797302349999995,
+    "longitude": 25.337979518852315,
+    "category": "Monastery",
+    "sto_nto": 0
+  },
+  {
+    "id": 145,
+    "name_bg": "Шипченски манастир \"Рождество Христово\"",
+    "latitude": 42.71606525,
+    "longitude": 25.328992772896193,
+    "category": "Monastery",
+    "sto_nto": 1
+  },
+  {
+    "id": 146,
+    "name_bg": "Архитектурно-етнографският комплекс \"Етър\" - Габрово",
+    "latitude": 42.80685303076462,
+    "longitude": 25.348040982673385,
+    "category": "AIR",
+    "sto_nto": 1
+  },
+  {
+    "id": 147,
+    "name_bg": "Архитектурно-исторически резерват \"Боженци\"",
+    "latitude": 42.8739584,
+    "longitude": 25.4231995,
+    "category": "AIR",
+    "sto_nto": 1
+  },
+  {
+    "id": 148,
+    "name_bg": "Музей на резбарското и етнографското изкуство - Трявна",
+    "latitude": 42.865094,
+    "longitude": 25.4868527,
+    "category": "Museum",
+    "sto_nto": 1
+  },
+  {
+    "id": 149,
+    "name_bg": "Дряновски манастир \"Св. Архангел Михаил\"",
+    "latitude": 42.9503495,
+    "longitude": 25.43222990738527,
+    "category": "Monastery",
+    "sto_nto": 1
+  },
+  {
+    "id": 150,
+    "name_bg": "Архитектурно-исторически комплекс — „Даскалоливницата“ – Елена",
+    "latitude": 42.928487849999996,
+    "longitude": 25.87639079131061,
+    "category": "AIR",
+    "sto_nto": 1
+  },
+  {
+    "id": 151,
+    "name_bg": "Музей на котленските възрожденци – Котел",
+    "latitude": 42.8888171,
+    "longitude": 26.447004632842123,
+    "category": "Museum",
+    "sto_nto": 1
+  },
+  {
+    "id": 152,
+    "name_bg": "къща музей Йордан Йовков",
+    "latitude": 42.832545550000006,
+    "longitude": 26.4569963,
+    "category": "Museum",
+    "sto_nto": 1
+  },
+  {
+    "id": 153,
+    "name_bg": "Архитектурно-исторически резерват Жеравна",
+    "latitude": 42.8334393,
+    "longitude": 26.459254,
+    "category": "AIR",
+    "sto_nto": 1
+  },
+  {
+    "id": 154,
+    "name_bg": "Местност \"Карандила\"",
+    "latitude": 42.71526995,
+    "longitude": 26.373805649169732,
+    "category": "Park / Landmark",
+    "sto_nto": 1
+  },
+  {
+    "id": 155,
+    "name_bg": "Старият бряст - Сливен",
+    "latitude": 42.6806007,
+    "longitude": 26.3169013,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 156,
+    "name_bg": "скално образувание \"Халката\"",
+    "latitude": 42.7083733,
+    "longitude": 26.349114699999998,
+    "category": "Rock Formation",
+    "sto_nto": 0
+  },
+  {
+    "id": 157,
+    "name_bg": "Археологически резерват \"Кабиле\"",
+    "latitude": 42.547363399999995,
+    "longitude": 26.48405434362688,
+    "category": "AIR",
+    "sto_nto": 1
+  },
+  {
+    "id": 158,
+    "name_bg": "Могила Голяма Косматка",
+    "latitude": 42.6996088,
+    "longitude": 25.3334959,
+    "category": "Tomb",
+    "sto_nto": 0
+  },
+  {
+    "id": 159,
+    "name_bg": "Вратата на Богинята майка",
+    "latitude": 42.570362,
+    "longitude": 25.3767218,
+    "category": "Sanctuary",
+    "sto_nto": 0
+  },
+  {
+    "id": 160,
+    "name_bg": "Казанлъшка гробница",
+    "latitude": 42.6257742,
+    "longitude": 25.3991715107491,
+    "category": "Tomb",
+    "sto_nto": 1
+  },
+  {
+    "id": 161,
+    "name_bg": "етнографски комплекс Дамасцена",
+    "latitude": 42.6692283,
+    "longitude": 25.2017728,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 162,
+    "name_bg": "Язовир Копринка",
+    "latitude": 42.62942,
+    "longitude": 25.3375401,
+    "category": "Lake / Reservoir",
+    "sto_nto": 0
+  },
+  {
+    "id": 163,
+    "name_bg": "Къща-музей  \"Христо Ботев\"",
+    "latitude": 42.61135575,
+    "longitude": 24.977099306604764,
+    "category": "Museum",
+    "sto_nto": 1
+  },
+  {
+    "id": 164,
+    "name_bg": "Кадемлийското пръскало",
+    "latitude": 42.7280702,
+    "longitude": 25.025439,
+    "category": "Waterfall",
+    "sto_nto": 0
+  },
+  {
+    "id": 165,
+    "name_bg": "Райското пръскало",
+    "latitude": 42.7015152,
+    "longitude": 24.9254131,
+    "category": "Waterfall",
+    "sto_nto": 0
+  },
+  {
+    "id": 166,
+    "name_bg": "връх Левски (Амбарица) ",
+    "latitude": 42.720074,
+    "longitude": 24.780975,
+    "category": "Peak",
+    "sto_nto": 0
+  },
+  {
+    "id": 167,
+    "name_bg": "Връх Ботев ( х3 )",
+    "latitude": 42.716479,
+    "longitude": 24.9184276,
+    "category": "Peak",
+    "sto_nto": 1
+  },
+  {
+    "id": 168,
+    "name_bg": "Къща-музей „Васил Левски“",
+    "latitude": 42.6422862,
+    "longitude": 24.802961924377648,
+    "category": "Museum",
+    "sto_nto": 1
+  },
+  {
+    "id": 169,
+    "name_bg": "Археологически музей",
+    "latitude": 42.50188465,
+    "longitude": 24.706174887756593,
+    "category": "Museum",
+    "sto_nto": 1
+  },
+  {
+    "id": 170,
+    "name_bg": "Момина баня",
+    "latitude": 42.50478665,
+    "longitude": 24.711898601671344,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 171,
+    "name_bg": "Кромлех при село Старо Железаре",
+    "latitude": 42.4369248,
+    "longitude": 24.6585987,
+    "category": "Cromlech",
+    "sto_nto": 0
+  },
+  {
+    "id": 172,
+    "name_bg": "Тракийски култов комплекс",
+    "latitude": 42.5141122,
+    "longitude": 24.5710776,
+    "category": "Sanctuary",
+    "sto_nto": 1
+  },
+  {
+    "id": 173,
+    "name_bg": "Къща-музей „Иван Вазов“",
+    "latitude": 42.6542156,
+    "longitude": 24.755826336353152,
+    "category": "Museum",
+    "sto_nto": 1
+  },
+  {
+    "id": 174,
+    "name_bg": "Исторически музей - Клисура",
+    "latitude": 42.6942539,
+    "longitude": 24.4499704,
+    "category": "Museum",
+    "sto_nto": 1
+  },
+  {
+    "id": 175,
+    "name_bg": "Паметник на Боримечката",
+    "latitude": 42.6966111,
+    "longitude": 24.4534444,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 176,
+    "name_bg": "връх Марагидик",
+    "latitude": 42.7598677,
+    "longitude": 24.9744309,
+    "category": "Peak",
+    "sto_nto": 0
+  },
+  {
+    "id": 177,
+    "name_bg": "връх Купена",
+    "latitude": 42.7236309,
+    "longitude": 24.8193349,
+    "category": "Peak",
+    "sto_nto": 0
+  },
+  {
+    "id": 178,
+    "name_bg": "Връх Вежен",
+    "latitude": 42.7520814,
+    "longitude": 24.4070375,
+    "category": "Peak",
+    "sto_nto": 0
+  },
+  {
+    "id": 179,
+    "name_bg": "Връх Богдан",
+    "latitude": 42.6072315,
+    "longitude": 24.4615129,
+    "category": "Peak",
+    "sto_nto": 0
+  },
+  {
+    "id": 180,
+    "name_bg": "Архитектурно-исторически резерват",
+    "latitude": 42.6375324,
+    "longitude": 24.3577991,
+    "category": "AIR",
+    "sto_nto": 1
+  },
+  {
+    "id": 181,
+    "name_bg": "Къща-музей „Райна Княгиня“",
+    "latitude": 42.5066408,
+    "longitude": 24.1837576,
+    "category": "Museum",
+    "sto_nto": 1
+  },
+  {
+    "id": 182,
+    "name_bg": "Историческа местност „Оборище“",
+    "latitude": 42.5361306,
+    "longitude": 24.1159349,
+    "category": "AIR",
+    "sto_nto": 1
+  },
+  {
+    "id": 183,
+    "name_bg": "Арехеологическият парк \"Тополница\"",
+    "latitude": 42.6602737,
+    "longitude": 24.0560084,
+    "category": "AIR",
+    "sto_nto": 0
+  },
+  {
+    "id": 184,
+    "name_bg": "Античен театър",
+    "latitude": 42.14697554999999,
+    "longitude": 24.751213723331155,
+    "category": "Park / Landmark",
+    "sto_nto": 1
+  },
+  {
+    "id": 185,
+    "name_bg": "Стария Пловдив",
+    "latitude": 42.149815,
+    "longitude": 24.748524,
+    "category": "AIR",
+    "sto_nto": 0
+  },
+  {
+    "id": 186,
+    "name_bg": "Исторически музей",
+    "latitude": 42.0556131,
+    "longitude": 24.54555227658537,
+    "category": "Museum",
+    "sto_nto": 1
+  },
+  {
+    "id": 187,
+    "name_bg": "Асенова крепост (x2)",
+    "latitude": 41.986681250000004,
+    "longitude": 24.873473218245685,
+    "category": "Fortress",
+    "sto_nto": 1
+  },
+  {
+    "id": 188,
+    "name_bg": "Рибната църква “Св. Богородица – Благовещение”",
+    "latitude": 42.0024989,
+    "longitude": 24.876169039414847,
+    "category": "Monastery",
+    "sto_nto": 0
+  },
+  {
+    "id": 189,
+    "name_bg": "Бачковски манастир",
+    "latitude": 41.94188785,
+    "longitude": 24.849487607329763,
+    "category": "Monastery",
+    "sto_nto": 1
+  },
+  {
+    "id": 190,
+    "name_bg": "Чирпански манастир „Свети Атанасий“: най-старият в Европа",
+    "latitude": 42.105779549999994,
+    "longitude": 25.424588633643,
+    "category": "Monastery",
+    "sto_nto": 1
+  },
+  {
+    "id": 191,
+    "name_bg": "Зоокът Хаджидимово",
+    "latitude": 41.51188265,
+    "longitude": 23.855489575,
+    "category": "Zoo",
+    "sto_nto": 0
+  },
+  {
+    "id": 192,
+    "name_bg": "Зоо кът „Алис“",
+    "latitude": 42.59273,
+    "longitude": 22.9139,
+    "category": "Zoo",
+    "sto_nto": 0
+  },
+  {
+    "id": 193,
+    "name_bg": "Гигински манастир \"Св. св. Козма и Дамян\"",
+    "latitude": 42.6381719,
+    "longitude": 22.844792657114432,
+    "category": "Monastery",
+    "sto_nto": 0
+  },
+  {
+    "id": 194,
+    "name_bg": "Мемориален комплекс “Бранителите на Стара Загора\"",
+    "latitude": 42.43321365,
+    "longitude": 25.654328785004942,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 195,
+    "name_bg": "Неолитни жилища",
+    "latitude": 42.4245653,
+    "longitude": 25.6106758,
+    "category": "Museum",
+    "sto_nto": 1
+  },
+  {
+    "id": 196,
+    "name_bg": "парк Аязмото",
+    "latitude": 42.4407602,
+    "longitude": 25.6151458,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 197,
+    "name_bg": "Карановска селищна могила",
+    "latitude": 42.51339955,
+    "longitude": 25.90946865939189,
+    "category": "Tomb",
+    "sto_nto": 1
+  },
+  {
+    "id": 198,
+    "name_bg": "Източна могила",
+    "latitude": 42.520987,
+    "longitude": 25.9137792,
+    "category": "Tomb",
+    "sto_nto": 0
+  },
+  {
+    "id": 199,
+    "name_bg": "Исторически музей - Батак",
+    "latitude": 41.94270485,
+    "longitude": 24.218329692134134,
+    "category": "Museum",
+    "sto_nto": 1
+  },
+  {
+    "id": 200,
+    "name_bg": "Църква-костница „Света Неделя“",
+    "latitude": 41.9435361,
+    "longitude": 24.2182235,
+    "category": "Monastery",
+    "sto_nto": 1
+  },
+  {
+    "id": 201,
+    "name_bg": "Цигов Чарк",
+    "latitude": 41.9549085,
+    "longitude": 24.1498475,
+    "category": "Lake / Reservoir",
+    "sto_nto": 0
+  },
+  {
+    "id": 202,
+    "name_bg": "Исторически музей ",
+    "latitude": 42.0228625,
+    "longitude": 24.374514903977634,
+    "category": "Museum",
+    "sto_nto": 1
+  },
+  {
+    "id": 203,
+    "name_bg": "Пещера \"Снежанка\"",
+    "latitude": 42.0025902,
+    "longitude": 24.2774606,
+    "category": "Cave",
+    "sto_nto": 1
+  },
+  {
+    "id": 204,
+    "name_bg": "Червената църква",
+    "latitude": 42.074076500000004,
+    "longitude": 24.55610333272187,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 205,
+    "name_bg": "Историко-археологичен резерват „Шуменска крепост“",
+    "latitude": 43.2625335,
+    "longitude": 26.8946099,
+    "category": "Fortress",
+    "sto_nto": 1
+  },
+  {
+    "id": 206,
+    "name_bg": "Паметник „1300 години България“",
+    "latitude": 43.25918281067933,
+    "longitude": 26.906751402633088,
+    "category": "Park / Landmark",
+    "sto_nto": 1
+  },
+  {
+    "id": 207,
+    "name_bg": "Мадарски конник",
+    "latitude": 43.2773746,
+    "longitude": 27.1188945,
+    "category": "Rock Formation",
+    "sto_nto": 1
+  },
+  {
+    "id": 208,
+    "name_bg": "Археологически музей \"Велики Преслав\"",
+    "latitude": 43.153350200000006,
+    "longitude": 26.8149543040942,
+    "category": "AIR",
+    "sto_nto": 1
+  },
+  {
+    "id": 209,
+    "name_bg": "Крепост Овеч",
+    "latitude": 43.17297255,
+    "longitude": 27.44725876523126,
+    "category": "Fortress",
+    "sto_nto": 0
+  },
+  {
+    "id": 210,
+    "name_bg": "Чудните скали",
+    "latitude": 42.9665529,
+    "longitude": 27.2921419,
+    "category": "Rock Formation",
+    "sto_nto": 0
+  },
+  {
+    "id": 211,
+    "name_bg": "Остров Света Анастасия",
+    "latitude": 42.4683522,
+    "longitude": 27.553003,
+    "category": "Island",
+    "sto_nto": 0
+  },
+  {
+    "id": 212,
+    "name_bg": "Етнографски музей",
+    "latitude": 42.6583159,
+    "longitude": 27.7363048,
+    "category": "Museum",
+    "sto_nto": 1
+  },
+  {
+    "id": 213,
+    "name_bg": "Музей на солта",
+    "latitude": 42.5655417,
+    "longitude": 27.631801799999998,
+    "category": "Museum",
+    "sto_nto": 1
+  },
+  {
+    "id": 214,
+    "name_bg": "Защитена местност Пода",
+    "latitude": 42.4497097,
+    "longitude": 27.459077482569175,
+    "category": "Park / Landmark",
+    "sto_nto": 1
+  },
+  {
+    "id": 215,
+    "name_bg": "Исторически парк",
+    "latitude": 43.2592297,
+    "longitude": 27.5203986,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 216,
+    "name_bg": "Делфинариум Варна",
+    "latitude": 43.2126971,
+    "longitude": 27.943431361778842,
+    "category": "Zoo",
+    "sto_nto": 0
+  },
+  {
+    "id": 217,
+    "name_bg": "Седемте рилски езера (х3)",
+    "latitude": 42.202252,
+    "longitude": 23.3172324,
+    "category": "Lake / Reservoir",
+    "sto_nto": 1
+  },
+  {
+    "id": 218,
+    "name_bg": "Мусала (x2)",
+    "latitude": 42.1791927,
+    "longitude": 23.5852784,
+    "category": "Peak",
+    "sto_nto": 1
+  },
+  {
+    "id": 219,
+    "name_bg": "Мальовица (x2)",
+    "latitude": 42.1738164,
+    "longitude": 23.3630233,
+    "category": "Peak",
+    "sto_nto": 0
+  },
+  {
+    "id": 220,
+    "name_bg": "Рилски манастир",
+    "latitude": 42.133298499999995,
+    "longitude": 23.340186499999998,
+    "category": "Monastery",
+    "sto_nto": 1
+  },
+  {
+    "id": 221,
+    "name_bg": "Стобски пирамиди",
+    "latitude": 42.0921371,
+    "longitude": 23.1213576,
+    "category": "Park / Landmark",
+    "sto_nto": 1
+  },
+  {
+    "id": 222,
+    "name_bg": "язовир Белмекен",
+    "latitude": 42.161975749999996,
+    "longitude": 23.79628154872372,
+    "category": "Lake / Reservoir",
+    "sto_nto": 0
+  },
+  {
+    "id": 223,
+    "name_bg": "връх Белмекен",
+    "latitude": 42.180597,
+    "longitude": 23.7715017,
+    "category": "Peak",
+    "sto_nto": 0
+  },
+  {
+    "id": 224,
+    "name_bg": "хижа Белмекен",
+    "latitude": 42.192826800000006,
+    "longitude": 23.7491573672067,
+    "category": "Hut",
+    "sto_nto": 0
+  },
+  {
+    "id": 225,
+    "name_bg": "Исторически музей Велинград",
+    "latitude": 42.043866949999995,
+    "longitude": 23.986874435997827,
+    "category": "Museum",
+    "sto_nto": 1
+  },
+  {
+    "id": 226,
+    "name_bg": "Клептуза (x2)",
+    "latitude": 42.00076775,
+    "longitude": 23.982857771855787,
+    "category": "Lake / Reservoir",
+    "sto_nto": 0
+  },
+  {
+    "id": 227,
+    "name_bg": "Плиоценски парк Дорково",
+    "latitude": 42.049784599999995,
+    "longitude": 24.12222645,
+    "category": "Museum",
+    "sto_nto": 0
+  },
+  {
+    "id": 228,
+    "name_bg": "Крепост Цепина",
+    "latitude": 42.0857345,
+    "longitude": 24.123909680732588,
+    "category": "Fortress",
+    "sto_nto": 0
+  },
+  {
+    "id": 229,
+    "name_bg": "Църква Св. Св. Теодор Тирон и Теодор Стратилат",
+    "latitude": 41.9700218,
+    "longitude": 23.4771662,
+    "category": "Monastery",
+    "sto_nto": 1
+  },
+  {
+    "id": 230,
+    "name_bg": "Къща-музей Никола Вапцаров",
+    "latitude": 41.8375024,
+    "longitude": 23.4888023,
+    "category": "Museum",
+    "sto_nto": 1
+  },
+  {
+    "id": 231,
+    "name_bg": "Църква \"Света Троица\"",
+    "latitude": 41.835386650000004,
+    "longitude": 23.48705854689655,
+    "category": "Monastery",
+    "sto_nto": 0
+  },
+  {
+    "id": 232,
+    "name_bg": "Връх Вихрен (х3)",
+    "latitude": 41.7673317,
+    "longitude": 23.3988444,
+    "category": "Peak",
+    "sto_nto": 1
+  },
+  {
+    "id": 233,
+    "name_bg": "Седловина Кончето (х3)",
+    "latitude": 41.781761409846496,
+    "longitude": 23.392808849363615,
+    "category": "Rock Formation",
+    "sto_nto": 0
+  },
+  {
+    "id": 234,
+    "name_bg": "Празник на кестена",
+    "latitude": 41.86505,
+    "longitude": 23.1868,
+    "category": "Event",
+    "sto_nto": 0
+  },
+  {
+    "id": 235,
+    "name_bg": "парк Бачиново",
+    "latitude": 42.0347716,
+    "longitude": 23.1276329,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 236,
+    "name_bg": "кръста над Благоевград",
+    "latitude": 42.0225941,
+    "longitude": 23.1105814,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 237,
+    "name_bg": "Архитектурен комплекс Вароша",
+    "latitude": 42.0154901,
+    "longitude": 23.1005359,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 238,
+    "name_bg": "„Свето Възнесение Господне”",
+    "latitude": 42.021182,
+    "longitude": 23.1042376,
+    "category": "Monastery",
+    "sto_nto": 0
+  },
+  {
+    "id": 239,
+    "name_bg": "Исторически музей Благоевград",
+    "latitude": 42.020427,
+    "longitude": 23.10321500730019,
+    "category": "Museum",
+    "sto_nto": 1
+  },
+  {
+    "id": 240,
+    "name_bg": "Картала",
+    "latitude": 42.0427833,
+    "longitude": 23.3594449,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 241,
+    "name_bg": "хижа Македония (x2)",
+    "latitude": 42.04714835,
+    "longitude": 23.43958275,
+    "category": "Hut",
+    "sto_nto": 0
+  },
+  {
+    "id": 242,
+    "name_bg": "яз. Широка поляна",
+    "latitude": 41.76441905,
+    "longitude": 24.13691848319796,
+    "category": "Lake / Reservoir",
+    "sto_nto": 0
+  },
+  {
+    "id": 243,
+    "name_bg": "яз.Доспат",
+    "latitude": 41.6900566,
+    "longitude": 24.094260183714553,
+    "category": "Lake / Reservoir",
+    "sto_nto": 0
+  },
+  {
+    "id": 244,
+    "name_bg": "Роженски манастир",
+    "latitude": 41.530539399999995,
+    "longitude": 23.426415799999997,
+    "category": "Monastery",
+    "sto_nto": 1
+  },
+  {
+    "id": 245,
+    "name_bg": "АИР Мелник",
+    "latitude": 41.5229421,
+    "longitude": 23.393246,
+    "category": "AIR",
+    "sto_nto": 1
+  },
+  {
+    "id": 246,
+    "name_bg": "Рупите - Храм-паметник Света Петка Българска Баба Ванга",
+    "latitude": 41.4591206,
+    "longitude": 23.2637517,
+    "category": "Sanctuary",
+    "sto_nto": 1
+  },
+  {
+    "id": 247,
+    "name_bg": "Хераклея Синтика",
+    "latitude": 41.450178300000005,
+    "longitude": 23.266053047874024,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 248,
+    "name_bg": "Самуилова крепост",
+    "latitude": 41.3945683,
+    "longitude": 23.0264789,
+    "category": "Fortress",
+    "sto_nto": 1
+  },
+  {
+    "id": 249,
+    "name_bg": "Връх Радомир",
+    "latitude": 41.3205934,
+    "longitude": 23.1206583,
+    "category": "Peak",
+    "sto_nto": 0
+  },
+  {
+    "id": 250,
+    "name_bg": "връх Конгур",
+    "latitude": 41.3212466,
+    "longitude": 23.1748514,
+    "category": "Peak",
+    "sto_nto": 0
+  },
+  {
+    "id": 251,
+    "name_bg": "връх Гоцев (x2)",
+    "latitude": 41.3770418,
+    "longitude": 23.6206555,
+    "category": "Peak",
+    "sto_nto": 0
+  },
+  {
+    "id": 252,
+    "name_bg": "Преподобна Стойна",
+    "latitude": 41.4988118,
+    "longitude": 23.4159918,
+    "category": "Sanctuary",
+    "sto_nto": 0
+  },
+  {
+    "id": 253,
+    "name_bg": "Парк \"Свети Врач\"",
+    "latitude": 41.5726253,
+    "longitude": 23.2850443,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 254,
+    "name_bg": "парк Рила Дупница",
+    "latitude": 42.248785350000006,
+    "longitude": 23.144423905502588,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 255,
+    "name_bg": "Софраджик",
+    "latitude": 42.2360174,
+    "longitude": 23.173067,
+    "category": "Gorge / Eco Trail",
+    "sto_nto": 0
+  },
+  {
+    "id": 256,
+    "name_bg": "Екопътека “Зорница”",
+    "latitude": 42.2652,
+    "longitude": 23.49763,
+    "category": "Gorge / Eco Trail",
+    "sto_nto": 0
+  },
+  {
+    "id": 257,
+    "name_bg": "Под Камико",
+    "latitude": 43.030505,
+    "longitude": 23.3792046,
+    "category": "Waterfall",
+    "sto_nto": 0
+  },
+  {
+    "id": 258,
+    "name_bg": "Белинташ (x2)",
+    "latitude": 41.8502105,
+    "longitude": 24.9708706,
+    "category": "Sanctuary",
+    "sto_nto": 0
+  },
+  {
+    "id": 259,
+    "name_bg": "Кръстова гора",
+    "latitude": 41.8409174,
+    "longitude": 24.9188316,
+    "category": "Sanctuary",
+    "sto_nto": 0
+  },
+  {
+    "id": 260,
+    "name_bg": "Караджов камък",
+    "latitude": 41.8230361,
+    "longitude": 24.9512553,
+    "category": "Rock Formation",
+    "sto_nto": 0
+  },
+  {
+    "id": 261,
+    "name_bg": "Скален мост \"Шапран дупка\"",
+    "latitude": 41.82669,
+    "longitude": 24.89762,
+    "category": "Rock Formation",
+    "sto_nto": 0
+  },
+  {
+    "id": 262,
+    "name_bg": "Ягодинска пещера",
+    "latitude": 41.6289681,
+    "longitude": 24.3300445,
+    "category": "Cave",
+    "sto_nto": 1
+  },
+  {
+    "id": 263,
+    "name_bg": "Триградско ждрело",
+    "latitude": 41.5991144,
+    "longitude": 24.3778369,
+    "category": "Gorge / Eco Trail",
+    "sto_nto": 1
+  },
+  {
+    "id": 264,
+    "name_bg": "Дяволското Гърло",
+    "latitude": 41.6148843,
+    "longitude": 24.3791322,
+    "category": "Cave",
+    "sto_nto": 1
+  },
+  {
+    "id": 265,
+    "name_bg": "Чудните мостове",
+    "latitude": 41.818915950000004,
+    "longitude": 24.581948460896392,
+    "category": "Rock Formation",
+    "sto_nto": 1
+  },
+  {
+    "id": 266,
+    "name_bg": "връх Бекови скали",
+    "latitude": 41.9564054,
+    "longitude": 24.3967146,
+    "category": "Peak",
+    "sto_nto": 0
+  },
+  {
+    "id": 267,
+    "name_bg": "Язовир Въча",
+    "latitude": 41.9374506,
+    "longitude": 24.4434844,
+    "category": "Lake / Reservoir",
+    "sto_nto": 0
+  },
+  {
+    "id": 268,
+    "name_bg": "Широка лъка",
+    "latitude": 41.6794,
+    "longitude": 24.58073,
+    "category": "Park / Landmark",
+    "sto_nto": 1
+  },
+  {
+    "id": 269,
+    "name_bg": "Национална астрономическа обсерватория \"Рожен\"",
+    "latitude": 41.69321545,
+    "longitude": 24.738877825000003,
+    "category": "Observatory / Planetarium",
+    "sto_nto": 0
+  },
+  {
+    "id": 270,
+    "name_bg": "Събор на народното творчество и животновъдство \"Рожен\"",
+    "latitude": 41.673139,
+    "longitude": 24.736874834586743,
+    "category": "Event",
+    "sto_nto": 0
+  },
+  {
+    "id": 271,
+    "name_bg": "връх Голям Перелик",
+    "latitude": 41.6027185,
+    "longitude": 24.574486,
+    "category": "Peak",
+    "sto_nto": 0
+  },
+  {
+    "id": 272,
+    "name_bg": "Водопад \"Орфей\" и каньона на водопадите",
+    "latitude": 41.5862651,
+    "longitude": 24.6313628,
+    "category": "Waterfall",
+    "sto_nto": 0
+  },
+  {
+    "id": 273,
+    "name_bg": "Пещерата \"Ухловица\"",
+    "latitude": 41.5141756,
+    "longitude": 24.6599331,
+    "category": "Cave",
+    "sto_nto": 1
+  },
+  {
+    "id": 274,
+    "name_bg": "Дяволски мост",
+    "latitude": 41.6205818,
+    "longitude": 25.1141744,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 275,
+    "name_bg": "Етнографски музей Златоград",
+    "latitude": 41.3873014,
+    "longitude": 25.0859452,
+    "category": "Museum",
+    "sto_nto": 1
+  },
+  {
+    "id": 276,
+    "name_bg": "Меандър „Завоя“ на язовир Кърджали",
+    "latitude": 41.6686258,
+    "longitude": 25.2422356,
+    "category": "Lake / Reservoir",
+    "sto_nto": 0
+  },
+  {
+    "id": 277,
+    "name_bg": "пещера Утробата",
+    "latitude": 41.7048489,
+    "longitude": 25.2481141,
+    "category": "Cave",
+    "sto_nto": 0
+  },
+  {
+    "id": 278,
+    "name_bg": "Каменната сватба",
+    "latitude": 41.6562106,
+    "longitude": 25.399307,
+    "category": "Rock Formation",
+    "sto_nto": 0
+  },
+  {
+    "id": 279,
+    "name_bg": "Перперикон",
+    "latitude": 41.7146888,
+    "longitude": 25.4652422,
+    "category": "Sanctuary",
+    "sto_nto": 1
+  },
+  {
+    "id": 280,
+    "name_bg": "Татул",
+    "latitude": 41.5536983,
+    "longitude": 25.5406824,
+    "category": "Sanctuary",
+    "sto_nto": 1
+  },
+  {
+    "id": 281,
+    "name_bg": "Каменните гъби",
+    "latitude": 41.7859291,
+    "longitude": 25.4323537,
+    "category": "Rock Formation",
+    "sto_nto": 0
+  },
+  {
+    "id": 282,
+    "name_bg": "Монумент „Света Богородица“",
+    "latitude": 41.92836165,
+    "longitude": 25.55408155,
+    "category": "Park / Landmark",
+    "sto_nto": 1
+  },
+  {
+    "id": 283,
+    "name_bg": "Вила \"Армира\"",
+    "latitude": 41.49917915,
+    "longitude": 26.10664861671549,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 284,
+    "name_bg": "Мезешка крепост",
+    "latitude": 41.7375399,
+    "longitude": 26.08420751385063,
+    "category": "Fortress",
+    "sto_nto": 0
+  },
+  {
+    "id": 285,
+    "name_bg": "Мезешка гробница",
+    "latitude": 41.7350605,
+    "longitude": 26.10163525,
+    "category": "Tomb",
+    "sto_nto": 0
+  },
+  {
+    "id": 286,
+    "name_bg": "Кован кая",
+    "latitude": 41.61735515,
+    "longitude": 25.72203200539007,
+    "category": "Rock Formation",
+    "sto_nto": 0
+  },
+  {
+    "id": 287,
+    "name_bg": "Дом-музей Пеньо Пенев",
+    "latitude": 42.0560185,
+    "longitude": 25.5925472,
+    "category": "Museum",
+    "sto_nto": 1
+  },
+  {
+    "id": 288,
+    "name_bg": "Планетариум Смолян",
+    "latitude": 41.5759377,
+    "longitude": 24.7087044,
+    "category": "Observatory / Planetarium",
+    "sto_nto": 1
+  },
+  {
+    "id": 289,
+    "name_bg": "Кромлех Долни Главанак",
+    "latitude": 41.68179395,
+    "longitude": 25.812817656182062,
+    "category": "Observatory / Planetarium",
+    "sto_nto": 0
+  },
+  {
+    "id": 290,
+    "name_bg": "Гайдарско надсвирване в село Гела ",
+    "latitude": 41.6437424,
+    "longitude": 24.5728365,
+    "category": "Event",
+    "sto_nto": 0
+  },
+  {
+    "id": 291,
+    "name_bg": "Етнографско-археологически музей Елхово",
+    "latitude": 42.17120465,
+    "longitude": 26.56711035473279,
+    "category": "Museum",
+    "sto_nto": 1
+  },
+  {
+    "id": 292,
+    "name_bg": "Историческа местност Петрова нива",
+    "latitude": 42.0621132,
+    "longitude": 27.52724479830578,
+    "category": "Park / Landmark",
+    "sto_nto": 1
+  },
+  {
+    "id": 293,
+    "name_bg": "Археологически музей Созопол",
+    "latitude": 42.4220168,
+    "longitude": 27.6935308,
+    "category": "Museum",
+    "sto_nto": 1
+  },
+  {
+    "id": 294,
+    "name_bg": "Остров Св. Иван ",
+    "latitude": 42.438566949999995,
+    "longitude": 27.692477031938836,
+    "category": "Island",
+    "sto_nto": 0
+  },
+  {
+    "id": 295,
+    "name_bg": "комплекс \"Южна крепостна стена и кула\"",
+    "latitude": 42.4181556,
+    "longitude": 27.6943124,
+    "category": "Fortress",
+    "sto_nto": 0
+  },
+  {
+    "id": 296,
+    "name_bg": "Замъкът в Равадиново",
+    "latitude": 42.38910865,
+    "longitude": 27.672255849182342,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 297,
+    "name_bg": "Беглик Таш",
+    "latitude": 42.3115156,
+    "longitude": 27.7671651,
+    "category": "Sanctuary",
+    "sto_nto": 0
+  },
+  {
+    "id": 298,
+    "name_bg": "Устието на река Велека",
+    "latitude": 42.0601023,
+    "longitude": 27.94250672057823,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 299,
+    "name_bg": "Местност \"Корабите\"",
+    "latitude": 42.06433665,
+    "longitude": 27.986145743734237,
+    "category": "Rock Formation",
+    "sto_nto": 0
+  },
+  {
+    "id": 300,
+    "name_bg": "Паметник Спартак",
+    "latitude": 41.5525861,
+    "longitude": 23.2726197,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 301,
+    "name_bg": "Археологически резерват Никополис ад Нестум",
+    "latitude": 41.596531299999995,
+    "longitude": 23.795495799999998,
+    "category": "AIR",
+    "sto_nto": 0
+  },
+  {
+    "id": 302,
+    "name_bg": "Тракийски камъни",
+    "latitude": 41.8861079,
+    "longitude": 23.4661521,
+    "category": "Rock Formation",
+    "sto_nto": 0
+  },
+  {
+    "id": 303,
+    "name_bg": "Панорамна алея \"Стъпалата\"",
+    "latitude": 41.89152894754472,
+    "longitude": 23.463144173812168,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 304,
+    "name_bg": "Нове - античен римски град край Свищов",
+    "latitude": 43.6128919,
+    "longitude": 25.39422262826527,
+    "category": "Fortress",
+    "sto_nto": 0
+  },
+  {
+    "id": 305,
+    "name_bg": "Село Ковачевица - исторически и архитектурен резерват",
+    "latitude": 41.68481,
+    "longitude": 23.82551,
+    "category": "AIR",
+    "sto_nto": 0
+  },
+  {
+    "id": 306,
+    "name_bg": "Село Лещен - исторически и архитектурен резерват",
+    "latitude": 41.6369093,
+    "longitude": 23.8278291,
+    "category": "AIR",
+    "sto_nto": 0
+  },
+  {
+    "id": 307,
+    "name_bg": "Вазовата екопътека",
+    "latitude": 43.0222823,
+    "longitude": 23.354045,
+    "category": "Gorge / Eco Trail",
+    "sto_nto": 0
+  },
+  {
+    "id": 308,
+    "name_bg": "водопад Скакля",
+    "latitude": 43.0358778,
+    "longitude": 23.33328346456743,
+    "category": "Waterfall",
+    "sto_nto": 0
+  },
+  {
+    "id": 309,
+    "name_bg": "Пещерата на Свети Иван Рилски",
+    "latitude": 42.154455,
+    "longitude": 23.398438501951855,
+    "category": "Rock Formation",
+    "sto_nto": 0
+  },
+  {
+    "id": 310,
+    "name_bg": "Екопътека \"Бяла река\"",
+    "latitude": 42.659523532738426,
+    "longitude": 24.960186979818076,
+    "category": "Gorge / Eco Trail",
+    "sto_nto": 0
+  },
+  {
+    "id": 311,
+    "name_bg": "Калоферски мъжки манастир \"Рождество Богородично\"",
+    "latitude": 42.654932099999996,
+    "longitude": 24.95909932014039,
+    "category": "Monastery",
+    "sto_nto": 0
+  },
+  {
+    "id": 312,
+    "name_bg": "Село Ъглен и скалната арка над река Вит",
+    "latitude": 43.2029714,
+    "longitude": 24.311987,
+    "category": "Rock Formation",
+    "sto_nto": 0
+  },
+  {
+    "id": 313,
+    "name_bg": "Комплекс Дядо Йоцо",
+    "latitude": 43.08797115,
+    "longitude": 23.474903733875983,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 314,
+    "name_bg": "Екопътека \"Бяли Искър\"",
+    "latitude": 42.2434669,
+    "longitude": 23.5410172,
+    "category": "Gorge / Eco Trail",
+    "sto_nto": 0
+  },
+  {
+    "id": 315,
+    "name_bg": "Нос Агалина",
+    "latitude": 42.379007,
+    "longitude": 27.723415,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 316,
+    "name_bg": "Фестивал на Пясъчните Скулптури",
+    "latitude": 42.499461350000004,
+    "longitude": 27.481832639611564,
+    "category": "Event",
+    "sto_nto": 0
+  },
+  {
+    "id": 317,
+    "name_bg": "Парк за танцуващи мечки (х2) ",
+    "latitude": 42.0302818,
+    "longitude": 23.5796256,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 318,
+    "name_bg": "Скално образувание \"Слона\"",
+    "latitude": 41.7207933,
+    "longitude": 24.4231412,
+    "category": "Rock Formation",
+    "sto_nto": 0
+  },
+  {
+    "id": 319,
+    "name_bg": "Панорамна площадка \"Орлово око\"",
+    "latitude": 41.6432254,
+    "longitude": 24.3389365,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 320,
+    "name_bg": "ТВ Кула - Снежанка",
+    "latitude": 41.6368423,
+    "longitude": 24.6794481,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 321,
+    "name_bg": "Орфееви скали",
+    "latitude": 41.6286332,
+    "longitude": 24.6825683,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 322,
+    "name_bg": "Село Долен - исторически и архитектурен резерват",
+    "latitude": 41.6239563,
+    "longitude": 23.9317975,
+    "category": "AIR",
+    "sto_nto": 0
+  },
+  {
+    "id": 323,
+    "name_bg": "Водопад Попина лъка",
+    "latitude": 41.6722324,
+    "longitude": 23.3932396,
+    "category": "Waterfall",
+    "sto_nto": 0
+  },
+  {
+    "id": 324,
+    "name_bg": "Мишкова нива",
+    "latitude": 41.9578787,
+    "longitude": 27.500587347272663,
+    "category": "Cromlech",
+    "sto_nto": 0
+  },
+  {
+    "id": 325,
+    "name_bg": "Фотински водопади",
+    "latitude": 41.89081925,
+    "longitude": 24.386628409524494,
+    "category": "Waterfall",
+    "sto_nto": 0
+  },
+  {
+    "id": 326,
+    "name_bg": "Каменните глави - Градище Долно Дряново",
+    "latitude": 41.58692,
+    "longitude": 23.89803,
+    "category": "Rock Formation",
+    "sto_nto": 0
+  },
+  {
+    "id": 327,
+    "name_bg": "Овчарченски водопад Горица",
+    "latitude": 42.2666445,
+    "longitude": 23.2285421,
+    "category": "Waterfall",
+    "sto_nto": 0
+  },
+  {
+    "id": 328,
+    "name_bg": "Водопад Рилска Скакавица",
+    "latitude": 42.2339085,
+    "longitude": 23.2972632,
+    "category": "Waterfall",
+    "sto_nto": 0
+  },
+  {
+    "id": 329,
+    "name_bg": "Водопад Полска Скакавица",
+    "latitude": 42.412886,
+    "longitude": 22.6849192,
+    "category": "Waterfall",
+    "sto_nto": 0
+  },
+  {
+    "id": 330,
+    "name_bg": "Връх Безбог",
+    "latitude": 41.7305496,
+    "longitude": 23.5122255,
+    "category": "Peak",
+    "sto_nto": 0
+  },
+  {
+    "id": 331,
+    "name_bg": "Попово езеро",
+    "latitude": 41.7075306,
+    "longitude": 23.507887222546806,
+    "category": "Lake / Reservoir",
+    "sto_nto": 0
+  },
+  {
+    "id": 332,
+    "name_bg": "Връх Голямо Градище",
+    "latitude": 41.9653937,
+    "longitude": 27.4896814,
+    "category": "Peak",
+    "sto_nto": 0
+  },
+  {
+    "id": 333,
+    "name_bg": "„Гробницата“ на богинята Бастет",
+    "latitude": 41.9671273,
+    "longitude": 27.4879915,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 334,
+    "name_bg": "водопад Докузак",
+    "latitude": 42.0227883,
+    "longitude": 27.5022797,
+    "category": "Waterfall",
+    "sto_nto": 0
+  },
+  {
+    "id": 335,
+    "name_bg": "Местност Живата вода и змейският извор",
+    "latitude": 42.5242581,
+    "longitude": 23.2019687,
+    "category": "Gorge / Eco Trail",
+    "sto_nto": 0
+  },
+  {
+    "id": 336,
+    "name_bg": "хижа Ком (х2)",
+    "latitude": 43.1889675,
+    "longitude": 23.0807016,
+    "category": "Hut",
+    "sto_nto": 0
+  },
+  {
+    "id": 337,
+    "name_bg": "хижа Лескова",
+    "latitude": 42.9429066,
+    "longitude": 23.5679205,
+    "category": "Hut",
+    "sto_nto": 0
+  },
+  {
+    "id": 338,
+    "name_bg": "хижа Свищи плаз",
+    "latitude": 42.7663304,
+    "longitude": 24.1461199,
+    "category": "Hut",
+    "sto_nto": 0
+  },
+  {
+    "id": 339,
+    "name_bg": "хижа Ехо",
+    "latitude": 42.775072,
+    "longitude": 24.481354,
+    "category": "Hut",
+    "sto_nto": 0
+  },
+  {
+    "id": 340,
+    "name_bg": "Хижа Добрила",
+    "latitude": 42.71117315,
+    "longitude": 24.761151174800695,
+    "category": "Hut",
+    "sto_nto": 0
+  },
+  {
+    "id": 341,
+    "name_bg": "хижа Тъжа (х2)",
+    "latitude": 42.7512655,
+    "longitude": 24.9938544,
+    "category": "Hut",
+    "sto_nto": 0
+  },
+  {
+    "id": 342,
+    "name_bg": "хижа Грамадлива",
+    "latitude": 42.7928535,
+    "longitude": 25.6593303,
+    "category": "Hut",
+    "sto_nto": 0
+  },
+  {
+    "id": 343,
+    "name_bg": "хижа Буковец",
+    "latitude": 42.7894131,
+    "longitude": 25.8876923,
+    "category": "Hut",
+    "sto_nto": 0
+  },
+  {
+    "id": 344,
+    "name_bg": "хижа Мазалат",
+    "latitude": 42.7586526,
+    "longitude": 25.1145951,
+    "category": "Hut",
+    "sto_nto": 0
+  },
+  {
+    "id": 345,
+    "name_bg": "хижа Плевен",
+    "latitude": 42.7497909,
+    "longitude": 24.8957131,
+    "category": "Hut",
+    "sto_nto": 0
+  },
+  {
+    "id": 346,
+    "name_bg": "хижа Рай",
+    "latitude": 42.6970372,
+    "longitude": 24.9296078,
+    "category": "Hut",
+    "sto_nto": 0
+  },
+  {
+    "id": 347,
+    "name_bg": "хижа Кашана",
+    "latitude": 42.75146015,
+    "longitude": 24.077207567473963,
+    "category": "Hut",
+    "sto_nto": 0
+  },
+  {
+    "id": 348,
+    "name_bg": "хижа Козя Стена",
+    "latitude": 42.7852831,
+    "longitude": 24.5293026,
+    "category": "Hut",
+    "sto_nto": 0
+  },
+  {
+    "id": 349,
+    "name_bg": "хижа Дерменка",
+    "latitude": 42.731429999999996,
+    "longitude": 24.6808102,
+    "category": "Hut",
+    "sto_nto": 0
+  },
+  {
+    "id": 350,
+    "name_bg": "хижа Узана",
+    "latitude": 42.750863800000005,
+    "longitude": 25.238526693006538,
+    "category": "Hut",
+    "sto_nto": 0
+  },
+  {
+    "id": 351,
+    "name_bg": "хижа Чумерна",
+    "latitude": 42.7867158,
+    "longitude": 25.9600263,
+    "category": "Hut",
+    "sto_nto": 0
+  },
+  {
+    "id": 352,
+    "name_bg": "хижа Вада",
+    "latitude": 42.2284016,
+    "longitude": 23.3629637,
+    "category": "Hut",
+    "sto_nto": 0
+  },
+  {
+    "id": 353,
+    "name_bg": "хижа Ловна",
+    "latitude": 42.2288724,
+    "longitude": 23.339008738906198,
+    "category": "Hut",
+    "sto_nto": 0
+  },
+  {
+    "id": 354,
+    "name_bg": "Хижа Мальовица",
+    "latitude": 42.1887763,
+    "longitude": 23.37430441286421,
+    "category": "Hut",
+    "sto_nto": 0
+  },
+  {
+    "id": 355,
+    "name_bg": "хижа Рибни езера",
+    "latitude": 42.11237855,
+    "longitude": 23.493848291099432,
+    "category": "Hut",
+    "sto_nto": 0
+  },
+  {
+    "id": 356,
+    "name_bg": "Хижа \"Рилски езера\"",
+    "latitude": 42.2198406,
+    "longitude": 23.321685702719776,
+    "category": "Hut",
+    "sto_nto": 0
+  },
+  {
+    "id": 357,
+    "name_bg": "хижа Скакавица",
+    "latitude": 42.2305315,
+    "longitude": 23.3035972,
+    "category": "Hut",
+    "sto_nto": 0
+  },
+  {
+    "id": 358,
+    "name_bg": "хижа Безбог",
+    "latitude": 41.7344682,
+    "longitude": 23.524758,
+    "category": "Hut",
+    "sto_nto": 0
+  },
+  {
+    "id": 359,
+    "name_bg": "хижа Вихрен (х3)",
+    "latitude": 41.7565879,
+    "longitude": 23.4166268,
+    "category": "Hut",
+    "sto_nto": 0
+  },
+  {
+    "id": 360,
+    "name_bg": "Хижа Малина ",
+    "latitude": 41.6149843,
+    "longitude": 23.5381264,
+    "category": "Hut",
+    "sto_nto": 0
+  },
+  {
+    "id": 361,
+    "name_bg": "хижа Трите реки",
+    "latitude": 41.6309962,
+    "longitude": 23.4962202,
+    "category": "Hut",
+    "sto_nto": 0
+  },
+  {
+    "id": 362,
+    "name_bg": "Хижа Предел",
+    "latitude": 41.8970578,
+    "longitude": 23.3169043,
+    "category": "Hut",
+    "sto_nto": 0
+  },
+  {
+    "id": 363,
+    "name_bg": "хижа Яворов",
+    "latitude": 41.8256672,
+    "longitude": 23.378157734156368,
+    "category": "Hut",
+    "sto_nto": 0
+  },
+  {
+    "id": 364,
+    "name_bg": "хижа Славянка",
+    "latitude": 41.4229913,
+    "longitude": 23.659623903946766,
+    "category": "Hut",
+    "sto_nto": 0
+  },
+  {
+    "id": 365,
+    "name_bg": "хижа Извора (х2)",
+    "latitude": 41.4144855,
+    "longitude": 23.5576673,
+    "category": "Hut",
+    "sto_nto": 0
+  },
+  {
+    "id": 366,
+    "name_bg": "хижа Конгур",
+    "latitude": 41.3470723,
+    "longitude": 23.1882603,
+    "category": "Hut",
+    "sto_nto": 0
+  },
+  {
+    "id": 367,
+    "name_bg": "хижа Осогово",
+    "latitude": 42.1974094,
+    "longitude": 22.624269548793265,
+    "category": "Hut",
+    "sto_nto": 0
+  },
+  {
+    "id": 368,
+    "name_bg": "Парк Остров \"Свобода\" ",
+    "latitude": 42.18071305,
+    "longitude": 24.336322521902993,
+    "category": "Island",
+    "sto_nto": 0
+  },
+  {
+    "id": 369,
+    "name_bg": "заслон Тевно езеро",
+    "latitude": 41.6988837,
+    "longitude": 23.482842,
+    "category": "Hut",
+    "sto_nto": 0
+  },
+  {
+    "id": 370,
+    "name_bg": "Байкушева мура",
+    "latitude": 41.7670599,
+    "longitude": 23.4228463,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 371,
+    "name_bg": "нос Емине",
+    "latitude": 42.7013893,
+    "longitude": 27.9007088,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 372,
+    "name_bg": "връх Паскал",
+    "latitude": 42.7654716,
+    "longitude": 24.2227929,
+    "category": "Peak",
+    "sto_nto": 0
+  },
+  {
+    "id": 373,
+    "name_bg": "Връх Тетевенска баба",
+    "latitude": 42.7725993,
+    "longitude": 24.2861226,
+    "category": "Peak",
+    "sto_nto": 0
+  },
+  {
+    "id": 374,
+    "name_bg": "Връх Булуваня",
+    "latitude": 42.7600252,
+    "longitude": 24.3228499,
+    "category": "Peak",
+    "sto_nto": 0
+  },
+  {
+    "id": 375,
+    "name_bg": "Езерен връх",
+    "latitude": 42.1985175,
+    "longitude": 23.3110212,
+    "category": "Peak",
+    "sto_nto": 0
+  },
+  {
+    "id": 376,
+    "name_bg": "Вазов връх",
+    "latitude": 42.186542,
+    "longitude": 23.318216,
+    "category": "Peak",
+    "sto_nto": 0
+  },
+  {
+    "id": 377,
+    "name_bg": "Додов връх",
+    "latitude": 42.1677174,
+    "longitude": 23.3337061,
+    "category": "Peak",
+    "sto_nto": 0
+  },
+  {
+    "id": 378,
+    "name_bg": "връх Черна поляна (Карааланица) ",
+    "latitude": 42.0907639,
+    "longitude": 23.4818828,
+    "category": "Peak",
+    "sto_nto": 0
+  },
+  {
+    "id": 379,
+    "name_bg": "връх Капатник",
+    "latitude": 41.94495,
+    "longitude": 23.357733,
+    "category": "Peak",
+    "sto_nto": 0
+  },
+  {
+    "id": 380,
+    "name_bg": "Суходолското езеро",
+    "latitude": 41.80529065,
+    "longitude": 23.36297838341969,
+    "category": "Lake / Reservoir",
+    "sto_nto": 0
+  },
+  {
+    "id": 381,
+    "name_bg": "заслон Кончето",
+    "latitude": 41.7874519,
+    "longitude": 23.3825089,
+    "category": "Hut",
+    "sto_nto": 0
+  },
+  {
+    "id": 382,
+    "name_bg": "връх Кутело 2",
+    "latitude": 41.78001,
+    "longitude": 23.39536,
+    "category": "Peak",
+    "sto_nto": 0
+  },
+  {
+    "id": 383,
+    "name_bg": "връх Кутело 1",
+    "latitude": 41.7768708,
+    "longitude": 23.4000339,
+    "category": "Peak",
+    "sto_nto": 0
+  },
+  {
+    "id": 384,
+    "name_bg": "Жабешко Бъндеришко езеро",
+    "latitude": 41.73832659999999,
+    "longitude": 23.42295445775863,
+    "category": "Lake / Reservoir",
+    "sto_nto": 0
+  },
+  {
+    "id": 385,
+    "name_bg": "Дълго Бъндеришко езеро",
+    "latitude": 41.7353804,
+    "longitude": 23.426260420639686,
+    "category": "Lake / Reservoir",
+    "sto_nto": 0
+  },
+  {
+    "id": 386,
+    "name_bg": "връх Превалски чукар",
+    "latitude": 41.71307,
+    "longitude": 23.45886,
+    "category": "Peak",
+    "sto_nto": 0
+  },
+  {
+    "id": 387,
+    "name_bg": "Голям Царев връх",
+    "latitude": 41.3994362,
+    "longitude": 23.6405405,
+    "category": "Peak",
+    "sto_nto": 0
+  },
+  {
+    "id": 388,
+    "name_bg": "Бистришки водопад ",
+    "latitude": 42.2085508,
+    "longitude": 23.1770607,
+    "category": "Waterfall",
+    "sto_nto": 0
+  },
+  {
+    "id": 389,
+    "name_bg": "екодом Самоковище",
+    "latitude": 42.207406,
+    "longitude": 23.1920031,
+    "category": "Hut",
+    "sto_nto": 0
+  },
+  {
+    "id": 390,
+    "name_bg": "язовир Студен Кладенец ",
+    "latitude": 41.630262,
+    "longitude": 25.480779,
+    "category": "Lake / Reservoir",
+    "sto_nto": 0
+  },
+  {
+    "id": 391,
+    "name_bg": "оопарк Благоевград",
+    "latitude": 42.01414005,
+    "longitude": 23.10305497248801,
+    "category": "Zoo",
+    "sto_nto": 0
+  },
+  {
+    "id": 392,
+    "name_bg": "Поповокапски езеро",
+    "latitude": 42.17835395,
+    "longitude": 23.415862247943,
+    "category": "Lake / Reservoir",
+    "sto_nto": 0
+  },
+  {
+    "id": 393,
+    "name_bg": "Страшното езеро",
+    "latitude": 42.18003,
+    "longitude": 23.400403199425735,
+    "category": "Lake / Reservoir",
+    "sto_nto": 0
+  },
+  {
+    "id": 394,
+    "name_bg": "Хижа Мусала",
+    "latitude": 42.1982169,
+    "longitude": 23.5874521,
+    "category": "Hut",
+    "sto_nto": 0
+  },
+  {
+    "id": 395,
+    "name_bg": "връх Алеко",
+    "latitude": 42.1905969,
+    "longitude": 23.5795742,
+    "category": "Peak",
+    "sto_nto": 0
+  },
+  {
+    "id": 396,
+    "name_bg": "връх Людмил Янков",
+    "latitude": 42.1844629,
+    "longitude": 23.5813758,
+    "category": "Peak",
+    "sto_nto": 0
+  },
+  {
+    "id": 397,
+    "name_bg": "връх Малка Мусала",
+    "latitude": 42.1801998,
+    "longitude": 23.5913764,
+    "category": "Peak",
+    "sto_nto": 0
+  }
+]

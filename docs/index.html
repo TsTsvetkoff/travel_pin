@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Locations</title>
+    <link rel="stylesheet" href="./static/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        /* Base styles with mobile-first approach */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 10px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.5;
+        }
+
+        #map {
+            height: 50vh;
+            min-height: 300px;
+            width: 100%;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            touch-action: manipulation;
+        }
+
+        /* Filter bar styling - mobile first */
+        .filter-bar {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .filter-group > label:first-child {
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .filter-group label {
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            padding: 8px 0;
+        }
+
+        .filter-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+            background: white;
+        }
+
+        .filter-group input[type="radio"] {
+            width: 20px;
+            height: 20px;
+            margin: 0;
+        }
+
+        .filter-bar button {
+            padding: 12px 20px;
+            border-radius: 8px;
+            border: 1px solid #888;
+            background: #eee;
+            cursor: pointer;
+            font-size: 16px;
+            min-height: 44px;
+            touch-action: manipulation;
+        }
+
+        .filter-bar button:hover {
+            background: #ddd;
+        }
+
+        /* Navigation buttons styling */
+        .nav-buttons {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .nav-button {
+            display: inline-block;
+            padding: 15px 25px;
+            background: #007bff;
+            color: #fff;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            min-height: 44px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: all 0.2s ease;
+            touch-action: manipulation;
+            text-align: center;
+        }
+
+        .nav-button:hover {
+            background: #0056b3;
+        }
+
+        /* Category tile styling */
+        .category-tile {
+            margin-bottom: 20px;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .category-tile-header {
+            width: 100%;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        .category-tile-content {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .category-badge {
+            padding: 10px 15px;
+            background: #e9ecef;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            margin: 4px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        /* Search bar styling */
+        .search-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .search-form {
+            display: inline-block;
+        }
+
+        .search-input {
+            width: 100%;
+            max-width: 400px;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .search-button {
+            padding: 12px 20px;
+            border-radius: 8px;
+            border: 1px solid #888;
+            background: #eee;
+            cursor: pointer;
+            font-size: 16px;
+            min-height: 44px;
+            margin: 5px;
+            touch-action: manipulation;
+            transition: background-color 0.2s ease;
+        }
+
+        .search-button:hover {
+            background: #ddd;
+        }
+
+        .clear-button {
+            margin-left: 8px;
+        }
+
+        /* Category counters styling */
+        .category-counters {
+            margin-bottom: 20px;
+        }
+
+        .category-counters h3 {
+            margin-bottom: 10px;
+        }
+
+        .category-counters ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .category-counters li {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .category-counters strong {
+            font-weight: bold;
+        }
+
+        .locations {
+            max-height: 600px;
+            overflow-y: auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: flex-start;
+            align-items: flex-start;
+            min-height: 360px;
+        }
+
+        /* Location card styling */
+        .location-card {
+            width: 100%;
+            margin: 8px 0;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            display: block;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .location-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .location-card.nto {
+            background: #fffbe6;
+        }
+
+        .location-card.regular {
+            background: #f8f9fa;
+        }
+
+        .location-title {
+            font-size: 1.1em;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .location-category {
+            margin: 0 0 6px 0;
+            font-size: 0.95em;
+            color: #666;
+        }
+
+        .location-nto {
+            margin: 0;
+            font-size: 0.95em;
+        }
+
+        .location-nto.yes {
+            font-weight: bold;
+            color: #b8860b;
+        }
+
+        .location-nto.no {
+            font-weight: normal;
+            color: #333;
+        }
+
+        /* Tablet and desktop styles */
+        @media (min-width: 768px) {
+            body {
+                padding: 20px;
+            }
+
+            #map {
+                height: 60vh;
+                min-height: 500px;
+            }
+
+            .filter-bar {
+                flex-direction: row;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .filter-group {
+                flex-direction: row;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .filter-group > label:first-child {
+                margin-bottom: 0;
+                margin-right: 10px;
+            }
+
+            .search-input {
+                width: 400px;
+                margin-bottom: 0;
+                margin-right: 10px;
+            }
+
+            .locations {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 20px;
+            }
+
+            .location-card {
+                margin: 0;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            #map {
+                height: 70vh;
+                min-height: 600px;
+            }
+
+            .locations {
+                grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            }
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <!-- Category Tile -->
+    <div class="filter-bar category-tile" style="margin-bottom: 15px; flex-direction: column; align-items: center; padding: 10px;">
+        <div style="width: 100%; margin-bottom: 6px; text-align: center;">
+            <strong style="font-size: 1em; font-weight: bold;">Total tourist sites: <span id="totalCount">…</span></strong>
+        </div>
+        <div id="categoryBadges" style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; width: 100%; justify-content: center;">
+            <h4 style="margin: 0 8px 0 0; font-size: 0.9em;">Categories</h4>
+            <!-- category badges injected by JS -->
+        </div>
+    </div>
+
+    <!-- City Search and Hall of Fame Buttons -->
+    <div class="nav-buttons">
+        <a href="./city_search.html" class="nav-button">Search by City &amp; Range</a>
+        <a href="./hall_of_fame.html" class="nav-button">Hall of Fame :)</a>
+        <button type="button" id="toggleTrailsBtn" class="nav-button" style="border: none; cursor: pointer;">Show only E trails</button>
+    </div>
+
+    <form id="filterForm" class="filter-bar">
+        <div class="filter-group">
+            <label>100 National Tourist Sites:</label>
+            <label><input type="radio" name="sto_nto" value="" checked> Any</label>
+            <label><input type="radio" name="sto_nto" value="yes"> Yes</label>
+            <label><input type="radio" name="sto_nto" value="no"> No</label>
+        </div>
+
+        <div class="filter-group">
+            <label>Category:</label>
+            <select name="category" id="categorySelect">
+                <option value="" selected>All Categories</option>
+                <!-- options injected by JS -->
+            </select>
+        </div>
+
+        <button type="button" id="clearFiltersBtn">Clear Filters</button>
+    </form>
+
+    <div id="map"></div>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+        <form id="searchForm" class="search-form">
+            <input type="text" name="search" id="searchInput" placeholder="Търсене на Български" class="search-input">
+            <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                <button type="submit" class="search-button">Search</button>
+                <button type="button" id="clearSearchBtn" class="search-button">Clear Search</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="locations" class="locations"></div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="./e3_trail.js"></script>
+    <script src="./e4_trail.js"></script>
+    <script>
+    (function () {
+      'use strict';
+
+      // --- Categories (same order as the Flask app) ---
+      var CATEGORIES = [
+        'Fortress', 'Cave', 'Park / Landmark', 'Monastery', 'Peak', 'Rock Formation',
+        'Museum', 'Gorge / Eco Trail', 'Island', 'Lake / Reservoir', 'Event', 'Zoo',
+        'Waterfall', 'AIR', 'Tomb', 'Sanctuary', 'Cromlech', 'Observatory / Planetarium', 'Hut'
+      ];
+
+      // Peak first, then the rest — same sort as Flask.
+      var SORTED_CATEGORIES = ['Peak'].concat(CATEGORIES.filter(function (c) { return c !== 'Peak'; }));
+
+      // --- App state ---
+      var allLocations = [];
+      var map = null;
+      var locationMarkers = [];
+
+      // --- Map setup ---
+      function initMap() {
+        map = L.map('map').setView([42.7339, 25.4858], 7);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 18,
+          attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+      }
+
+      function drawE3Trail() {
+        var t = window.E3_TRAIL;
+        if (!t || !t.coords) return;
+        var line = L.polyline(t.coords, {
+          color: '#c1272d', weight: 3, opacity: 0.85,
+          lineCap: 'round', lineJoin: 'round'
+        }).addTo(map);
+        line.bindPopup("<b>E3 Trail (Kom–Emine)</b><br><span style='color: #666; font-size: 12px;'>European long-distance hiking trail</span>");
+        L.marker(t.start).addTo(map).bindPopup("<b>Старт</b><br>връх Ком");
+        L.marker(t.end).addTo(map).bindPopup("<b>Финал</b><br>нос Емине");
+      }
+
+      function drawE4Trail() {
+        var t = window.E4_TRAIL;
+        if (!t || !t.coords) return;
+        var line = L.polyline(t.coords, {
+          color: '#dc2626', weight: 4, opacity: 0.85,
+          lineCap: 'round', lineJoin: 'round'
+        }).addTo(map);
+        line.bindPopup("<b>E4 Trail (Vitosha → Verila → Rila → Pirin → Slavyanka)</b><br><span style='color: #666; font-size: 12px;'>European long-distance hiking trail · ~260 km</span>");
+        L.marker(t.start).addTo(map).bindPopup("<b>Старт</b><br>Драгалевци, Витоша");
+        L.marker(t.end).addTo(map).bindPopup("<b>Финал</b><br>Гоцев връх, Славянка");
+      }
+
+      // --- Category select (populated once from CATEGORIES) ---
+      function populateCategoryOptions() {
+        var sel = document.getElementById('categorySelect');
+        SORTED_CATEGORIES.forEach(function (cat) {
+          var opt = document.createElement('option');
+          opt.value = cat;
+          opt.textContent = cat;
+          sel.appendChild(opt);
+        });
+      }
+
+      // --- Filters ---
+      function currentFilters() {
+        var stoRadio = document.querySelector('input[name="sto_nto"]:checked');
+        var sto = stoRadio ? stoRadio.value : '';
+        var cat = document.getElementById('categorySelect').value || '';
+        var search = (document.getElementById('searchInput').value || '').trim().toLowerCase();
+        return { sto_nto: sto, category: cat, search: search };
+      }
+
+      function applyFilters(locs, f) {
+        return locs.filter(function (loc) {
+          if (f.sto_nto === 'yes' && !loc.sto_nto) return false;
+          if (f.sto_nto === 'no'  &&  loc.sto_nto) return false;
+          if (f.category && loc.category !== f.category) return false;
+          if (f.search && loc.name_bg.toLowerCase().indexOf(f.search) === -1) return false;
+          return true;
+        });
+      }
+
+      // --- Render: list, counters, markers ---
+      function clearMarkers() {
+        locationMarkers.forEach(function (m) { map.removeLayer(m); });
+        locationMarkers = [];
+      }
+
+      function renderMarkers(locs) {
+        clearMarkers();
+        locs.forEach(function (loc) {
+          if (loc.latitude && loc.longitude) {
+            var marker = L.marker([loc.latitude, loc.longitude]).addTo(map);
+            marker.bindPopup(
+              "<b>" + loc.name_bg + "</b><br>" +
+              "Category: " + loc.category + "<br>" +
+              "100 НТО: " + (loc.sto_nto ? "Yes" : "No")
+            );
+            locationMarkers.push(marker);
+          }
+        });
+      }
+
+      function renderList(locs) {
+        var root = document.getElementById('locations');
+        root.innerHTML = '';
+        locs.forEach(function (loc) {
+          var card = document.createElement('div');
+          card.className = 'location-card ' + (loc.sto_nto ? 'nto' : 'regular');
+          card.innerHTML =
+            '<h2 class="location-title">' + escapeHtml(loc.name_bg) + '</h2>' +
+            '<p class="location-category">Category: ' + escapeHtml(loc.category) + '</p>' +
+            '<p class="location-nto ' + (loc.sto_nto ? 'yes' : 'no') + '">100 НТО: ' + (loc.sto_nto ? 'Yes' : 'No') + '</p>';
+          root.appendChild(card);
+        });
+      }
+
+      function renderCategoryBadges(locs) {
+        var root = document.getElementById('categoryBadges');
+        // Keep the "Categories" label, drop the rest.
+        while (root.children.length > 1) root.removeChild(root.lastChild);
+
+        var counts = {};
+        SORTED_CATEGORIES.forEach(function (c) { counts[c] = 0; });
+        locs.forEach(function (loc) {
+          if (counts[loc.category] !== undefined) counts[loc.category]++;
+        });
+
+        SORTED_CATEGORIES.forEach(function (cat) {
+          var isPeak = cat === 'Peak';
+          var div = document.createElement('div');
+          div.style.cssText = isPeak
+            ? 'padding: 4px 8px; background: #e9ecef; border-radius: 6px; border: 1px solid #ccc; margin: 2px; font-size: 0.85em;'
+            : 'padding: 4px 8px; margin: 2px; font-size: 0.85em;';
+          div.className = isPeak ? '' : 'category-badge';
+          div.innerHTML = '<strong>' + cat + '</strong>: ' + counts[cat];
+          root.appendChild(div);
+        });
+
+        document.getElementById('totalCount').textContent = locs.length;
+      }
+
+      function rerender() {
+        var f = currentFilters();
+        var filtered = applyFilters(allLocations, f);
+        renderList(filtered);
+        renderMarkers(filtered);
+        renderCategoryBadges(filtered);
+      }
+
+      function escapeHtml(s) {
+        return String(s).replace(/[&<>"']/g, function (c) {
+          return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c];
+        });
+      }
+
+      // --- Wire up the filter/search controls ---
+      function wireUp() {
+        document.getElementById('filterForm').addEventListener('change', function (e) {
+          if (e.target.tagName === 'SELECT' || e.target.type === 'radio') {
+            rerender();
+          }
+        });
+        document.getElementById('searchForm').addEventListener('submit', function (e) {
+          e.preventDefault();
+          rerender();
+        });
+        document.getElementById('clearSearchBtn').addEventListener('click', function () {
+          document.getElementById('searchInput').value = '';
+          rerender();
+        });
+        document.getElementById('clearFiltersBtn').addEventListener('click', function () {
+          document.querySelectorAll('input[name="sto_nto"]').forEach(function (r) {
+            r.checked = (r.value === '');
+          });
+          document.getElementById('categorySelect').value = '';
+          rerender();
+        });
+
+        var showingOnlyTrails = false;
+        var toggleBtn = document.getElementById('toggleTrailsBtn');
+        toggleBtn.addEventListener('click', function () {
+          showingOnlyTrails = !showingOnlyTrails;
+          if (showingOnlyTrails) {
+            locationMarkers.forEach(function (m) { map.removeLayer(m); });
+          } else {
+            // Re-add the currently-filtered set.
+            var f = currentFilters();
+            var filtered = applyFilters(allLocations, f);
+            filtered.forEach(function (loc) {
+              if (loc.latitude && loc.longitude) {
+                var m = L.marker([loc.latitude, loc.longitude]).addTo(map);
+                m.bindPopup(
+                  "<b>" + loc.name_bg + "</b><br>" +
+                  "Category: " + loc.category + "<br>" +
+                  "100 НТО: " + (loc.sto_nto ? "Yes" : "No")
+                );
+                locationMarkers.push(m);
+              }
+            });
+          }
+          toggleBtn.textContent = showingOnlyTrails ? 'Show all pins' : 'Show only E trails';
+        });
+      }
+
+      // --- Bootstrap ---
+      fetch('./locations.json')
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          allLocations = data;
+          initMap();
+          drawE3Trail();
+          drawE4Trail();
+          populateCategoryOptions();
+          wireUp();
+          rerender();
+        })
+        .catch(function (err) {
+          document.body.insertAdjacentHTML(
+            'afterbegin',
+            '<div style="background:#fee;border:1px solid #c33;padding:12px;border-radius:6px;margin-bottom:12px">' +
+            'Could not load locations.json: ' + escapeHtml(err && err.message || String(err)) +
+            '</div>'
+          );
+        });
+    })();
+    </script>
+</body>
+</html>
