@@ -1,12 +1,11 @@
 from flask import Flask, render_template, request, redirect, url_for
-import sqlite3
 import requests
 from math import radians, cos, sin, asin, sqrt
 import os
 
-app = Flask(__name__)
+import db
 
-DB_NAME = 'locations.db'
+app = Flask(__name__)
 
 CATEGORY_MAP_BG_TO_EN = {
     'Крепост': 'Fortress',
@@ -36,72 +35,63 @@ CATEGORIES = [
     'Waterfall', 'AIR', 'Tomb', 'Sanctuary', 'Cromlech', 'Observatory / Planetarium', 'Hut'
 ]
 
-def init_db():
-    conn = sqlite3.connect(DB_NAME)
-    c = conn.cursor()
-    c.execute('''
-        CREATE TABLE IF NOT EXISTS locations (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            name_bg TEXT NOT NULL,
-            latitude REAL NOT NULL,
-            longitude REAL NOT NULL,
-            category TEXT NOT NULL,
-            sto_nto INTEGER NOT NULL
-        )
-    ''')
-    conn.commit()
-    conn.close()
 
 @app.route('/', methods=['GET'])
 def index():
     sto_nto = request.args.get('sto_nto')
     category = request.args.getlist('category')
     search = request.args.get('search', '').strip()
-    # Remove SQL-side LIKE for search
-    # Only filter by sto_nto and category in SQL
-    query = "SELECT * FROM locations WHERE 1=1"
-    params = []
-    if sto_nto in ['yes', 'no']:
-        query += " AND sto_nto=?"
-        params.append(1 if sto_nto == 'yes' else 0)
+
+    locations = db.all_locations()
+
+    # Apply filters in Python — keeps the SQL trivial and the search case-insensitive
+    # across all scripts.
+    if sto_nto in ('yes', 'no'):
+        wanted = 1 if sto_nto == 'yes' else 0
+        locations = [loc for loc in locations if loc['sto_nto'] == wanted]
     if category:
-        query += " AND category IN ({})".format(','.join('?'*len(category)))
-        params.extend(category)
-    conn = sqlite3.connect(DB_NAME)
-    c = conn.cursor()
-    c.execute(query, params)
-    locations = c.fetchall()
-    conn.close()
-    # Python-side case-insensitive search for all scripts
+        locations = [loc for loc in locations if loc['category'] in category]
     if search:
-        locations = [loc for loc in locations if search.lower() in loc[1].lower()]
-    # Category counters
+        locations = [loc for loc in locations if search.lower() in loc['name_bg'].lower()]
+
+    # Category counters (only the categories represented in the current filter).
     category_counts = {cat: 0 for cat in CATEGORIES}
     for loc in locations:
-        if loc[4] in category_counts:
-            category_counts[loc[4]] += 1
-    # Sort categories: Peak first, then others
+        if loc['category'] in category_counts:
+            category_counts[loc['category']] += 1
+
+    # Sort categories: Peak first, then the rest in their canonical order.
     sorted_categories = ['Peak'] + [cat for cat in CATEGORIES if cat != 'Peak']
+
+    # The template still indexes locations by numeric position, so ship it as a
+    # list of tuples to keep template changes minimal.
+    locations_as_tuples = [
+        (loc['id'], loc['name_bg'], loc['latitude'], loc['longitude'],
+         loc['category'], loc['sto_nto'])
+        for loc in locations
+    ]
     locations_js = [
         {
-            'id': loc[0],
-            'name_bg': loc[1],
-            'latitude': loc[2],
-            'longitude': loc[3],
-            'category': loc[4],
-            'sto_nto': loc[5]
+            'id': loc['id'],
+            'name_bg': loc['name_bg'],
+            'latitude': loc['latitude'],
+            'longitude': loc['longitude'],
+            'category': loc['category'],
+            'sto_nto': loc['sto_nto'],
         }
         for loc in locations
     ]
+
     return render_template(
         'index.html',
-        locations=locations,
+        locations=locations_as_tuples,
         locations_js=locations_js,
         categories=sorted_categories,
         category_counts=category_counts,
         selected_category=category,
         sto_nto=sto_nto
     )
+
 
 @app.route('/add', methods=['GET', 'POST'])
 def add_location():
@@ -117,16 +107,15 @@ def add_location():
         category_bg = request.form['category_bg']
         sto_nto = 1 if request.form.get('sto_nto') == 'on' else 0
         category_en = CATEGORY_MAP_BG_TO_EN.get(category_bg, category_bg)
-        conn = sqlite3.connect(DB_NAME)
-        c = conn.cursor()
-        c.execute('''
-            INSERT INTO locations (name_bg, latitude, longitude, category, sto_nto)
-            VALUES (?, ?, ?, ?, ?)
-        ''', (name_bg, latitude, longitude, category_en, sto_nto))
-        conn.commit()
-        conn.close()
+
+        db.insert_location(name_bg, latitude, longitude, category_en, sto_nto)
+        # Keep locations.json in sync so a subsequent `git add locations.json`
+        # followed by `git push` ships the new pin to the GitHub Pages site
+        # without any extra steps.
+        db.export_locations()
         return redirect(url_for('index'))
     return render_template('add.html', bg_categories=list(CATEGORY_MAP_BG_TO_EN.keys()))
+
 
 @app.route('/city_search', methods=['GET', 'POST'])
 def city_search():
@@ -148,11 +137,15 @@ def city_search():
         else:
             try:
                 km = float(km)
-                # Geocode city using Nominatim
+                # Geocode city using Nominatim. countrycodes=bg keeps the match
+                # inside Bulgaria — without it, "Варна" matches a town in
+                # Chelyabinsk Oblast, Russia, and similar collisions happen
+                # for other Bulgarian city names.
                 resp = requests.get('https://nominatim.openstreetmap.org/search', params={
                     'q': city,
                     'format': 'json',
-                    'limit': 1
+                    'limit': 1,
+                    'countrycodes': 'bg',
                 }, headers={'User-Agent': 'my_places_app'})
                 data = resp.json()
                 if not data:
@@ -160,12 +153,7 @@ def city_search():
                 else:
                     city_lat = float(data[0]['lat'])
                     city_lon = float(data[0]['lon'])
-                    # Fetch all locations
-                    conn = sqlite3.connect(DB_NAME)
-                    c = conn.cursor()
-                    c.execute('SELECT * FROM locations')
-                    all_locations = c.fetchall()
-                    conn.close()
+                    all_locations = db.all_locations()
                     # Haversine function
                     def haversine(lat1, lon1, lat2, lon2):
                         R = 6371  # Earth radius in km
@@ -176,12 +164,13 @@ def city_search():
                         return R * c
                     # Filter locations within range
                     for loc in all_locations:
-                        dist = haversine(city_lat, city_lon, loc[2], loc[3])
+                        dist = haversine(city_lat, city_lon, loc['latitude'], loc['longitude'])
                         if dist <= km:
                             results.append((loc, round(dist, 2)))
             except Exception as e:
                 error = f'Error: {e}'
     return render_template('city_search.html', results=results, error=error, city=city, km=km)
+
 
 @app.route('/hall_of_fame')
 def hall_of_fame():
@@ -194,6 +183,7 @@ def hall_of_fame():
         diplomas.sort()
     return render_template('hall_of_fame.html', diplomas=diplomas)
 
+
 if __name__ == '__main__':
-    init_db()
+    db.init_db()
     app.run(debug=True)
