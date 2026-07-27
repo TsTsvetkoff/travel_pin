@@ -3174,5 +3174,37 @@
     "longitude": 23.5913764,
     "category": "Peak",
     "sto_nto": 0
+  },
+  {
+    "id": 399,
+    "name_bg": "Долене",
+    "latitude": 41.4458412,
+    "longitude": 23.0309545,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 400,
+    "name_bg": "връх Мечит",
+    "latitude": 42.1953462,
+    "longitude": 23.4634343,
+    "category": "Peak",
+    "sto_nto": 0
+  },
+  {
+    "id": 401,
+    "name_bg": "връх Малък Мечит",
+    "latitude": 42.197568,
+    "longitude": 23.463896,
+    "category": "Peak",
+    "sto_nto": 0
+  },
+  {
+    "id": 402,
+    "name_bg": "хижа Мечит",
+    "latitude": 42.2259867,
+    "longitude": 23.4602486,
+    "category": "Hut",
+    "sto_nto": 0
   }
 ]
