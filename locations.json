@@ -3206,5 +3206,13 @@
     "longitude": 23.4602486,
     "category": "Hut",
     "sto_nto": 0
+  },
+  {
+    "id": 403,
+    "name_bg": "връх Иречек",
+    "latitude": 42.1839252,
+    "longitude": 23.5918252,
+    "category": "Peak",
+    "sto_nto": 0
   }
 ]
