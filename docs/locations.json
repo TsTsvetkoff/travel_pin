@@ -1929,7 +1929,7 @@
   },
   {
     "id": 242,
-    "name_bg": "яз. Широка поляна",
+    "name_bg": "яз. Широка поляна (Х2)",
     "latitude": 41.76441905,
     "longitude": 24.13691848319796,
     "category": "Lake / Reservoir",
@@ -2265,7 +2265,7 @@
   },
   {
     "id": 284,
-    "name_bg": "Мезешка крепост",
+    "name_bg": "Мезешка крепост (x2)",
     "latitude": 41.7375399,
     "longitude": 26.08420751385063,
     "category": "Fortress",
@@ -3213,6 +3213,190 @@
     "latitude": 42.1839252,
     "longitude": 23.5918252,
     "category": "Peak",
+    "sto_nto": 0
+  },
+  {
+    "id": 404,
+    "name_bg": "хижа Христо Смирненски",
+    "latitude": 42.1064195,
+    "longitude": 23.7935628,
+    "category": "Hut",
+    "sto_nto": 0
+  },
+  {
+    "id": 405,
+    "name_bg": "язовир Голям Беглик",
+    "latitude": 41.8045862,
+    "longitude": 24.1180735,
+    "category": "Lake / Reservoir",
+    "sto_nto": 0
+  },
+  {
+    "id": 406,
+    "name_bg": "хижа Орфей",
+    "latitude": 41.7096879,
+    "longitude": 24.3018971,
+    "category": "Hut",
+    "sto_nto": 0
+  },
+  {
+    "id": 407,
+    "name_bg": "Резерват Кастракли",
+    "latitude": 41.6886049,
+    "longitude": 24.3338552,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 408,
+    "name_bg": "хижа Тешел",
+    "latitude": 41.6722953,
+    "longitude": 24.3512469,
+    "category": "Hut",
+    "sto_nto": 0
+  },
+  {
+    "id": 409,
+    "name_bg": "Резерват \"Казаните\"",
+    "latitude": 41.6771105,
+    "longitude": 24.3991749,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 410,
+    "name_bg": "Казанджи дере",
+    "latitude": 41.6262713,
+    "longitude": 24.4939321,
+    "category": "Waterfall",
+    "sto_nto": 0
+  },
+  {
+    "id": 411,
+    "name_bg": "Връх Орфей",
+    "latitude": 41.627142,
+    "longitude": 24.542171,
+    "category": "Peak",
+    "sto_nto": 0
+  },
+  {
+    "id": 412,
+    "name_bg": "хижа Перелик ",
+    "latitude": 41.6103241,
+    "longitude": 24.5961962,
+    "category": "Hut",
+    "sto_nto": 0
+  },
+  {
+    "id": 413,
+    "name_bg": "Хижа Момчил юнак",
+    "latitude": 41.7003969,
+    "longitude": 24.8052953,
+    "category": "Hut",
+    "sto_nto": 0
+  },
+  {
+    "id": 414,
+    "name_bg": "Хижа Хайдушки поляни",
+    "latitude": 41.6923577,
+    "longitude": 24.8293871,
+    "category": "Hut",
+    "sto_nto": 0
+  },
+  {
+    "id": 415,
+    "name_bg": "Хижа Преспа",
+    "latitude": 41.6888481,
+    "longitude": 24.854215,
+    "category": "Hut",
+    "sto_nto": 0
+  },
+  {
+    "id": 416,
+    "name_bg": "хижа Свобода",
+    "latitude": 41.7183566,
+    "longitude": 24.9049855,
+    "category": "Hut",
+    "sto_nto": 0
+  },
+  {
+    "id": 417,
+    "name_bg": "Родопското конче",
+    "latitude": 41.7381195,
+    "longitude": 24.9426389,
+    "category": "Rock Formation",
+    "sto_nto": 0
+  },
+  {
+    "id": 418,
+    "name_bg": "Ловна хижа Акватепе",
+    "latitude": 41.7815711,
+    "longitude": 24.9560335,
+    "category": "Hut",
+    "sto_nto": 0
+  },
+  {
+    "id": 419,
+    "name_bg": "хижа Сини връх",
+    "latitude": 41.8620799,
+    "longitude": 25.0651146,
+    "category": "Hut",
+    "sto_nto": 0
+  },
+  {
+    "id": 420,
+    "name_bg": "Ин кая",
+    "latitude": 41.8527349,
+    "longitude": 25.0051732,
+    "category": "Rock Formation",
+    "sto_nto": 0
+  },
+  {
+    "id": 421,
+    "name_bg": "хижа Аида",
+    "latitude": 41.9042869,
+    "longitude": 25.299079,
+    "category": "Hut",
+    "sto_nto": 0
+  },
+  {
+    "id": 422,
+    "name_bg": "Доган Кая",
+    "latitude": 41.8683333,
+    "longitude": 25.2522222,
+    "category": "Rock Formation",
+    "sto_nto": 0
+  },
+  {
+    "id": 423,
+    "name_bg": "язовир Тракиец",
+    "latitude": 41.8668283,
+    "longitude": 25.4326254,
+    "category": "Lake / Reservoir",
+    "sto_nto": 0
+  },
+  {
+    "id": 424,
+    "name_bg": "хижа Книжовник",
+    "latitude": 41.8286596,
+    "longitude": 25.5783979,
+    "category": "Hut",
+    "sto_nto": 0
+  },
+  {
+    "id": 425,
+    "name_bg": "Златната обувка на Петър Жеков",
+    "latitude": 41.8257428,
+    "longitude": 25.6076084,
+    "category": "Park / Landmark",
+    "sto_nto": 0
+  },
+  {
+    "id": 426,
+    "name_bg": "Глухите камъни",
+    "latitude": 41.7275301,
+    "longitude": 25.9552004,
+    "category": "Sanctuary",
     "sto_nto": 0
   }
 ]
