@@ -532,36 +532,84 @@
             </select>
         </div>
 
-        <button type="button" onclick="window.location.href='/'">Clear Filters</button>
+        <button type="button" onclick="clearFilters()">Clear Filters</button>
     </form>
 
     <script>
-    document.getElementById('filterForm').addEventListener('change', function(e) {
-        // For multi-select, trigger only if select or radio changes
-        if (e.target.tagName === 'SELECT' || e.target.type === 'radio') {
-            // Store current scroll position before submitting
-            sessionStorage.setItem('scrollPosition', window.pageYOffset);
+        // Client‑side filtering for the static site
+        function applyFilters() {
+            const params = new URLSearchParams(window.location.search);
+            const stoNto = params.get('sto_nto') || '';
+            const category = params.get('category') || '';
 
-            // Remove empty category parameter before submitting
-            const categorySelect = this.querySelector('select[name="category"]');
-            if (categorySelect && categorySelect.value === '') {
-                categorySelect.removeAttribute('name');
-                this.submit();
-                categorySelect.setAttribute('name', 'category');
-            } else {
-                this.submit();
+            // Sync UI with query params
+            document.querySelectorAll('input[name="sto_nto"]').forEach(r => {
+                r.checked = (r.value === stoNto) || (stoNto === '' && r.value === '');
+            });
+            const categorySelect = document.querySelector('select[name="category"]');
+            if (categorySelect) {
+                categorySelect.value = category;
             }
-        }
-    });
 
-    // Restore scroll position after page load
-    window.addEventListener('load', function() {
-        const scrollPosition = sessionStorage.getItem('scrollPosition');
-        if (scrollPosition) {
-            window.scrollTo(0, parseInt(scrollPosition));
-            sessionStorage.removeItem('scrollPosition');
+            // Filter location cards
+            document.querySelectorAll('.location-card').forEach(card => {
+                let show = true;
+                if (stoNto === 'yes') {
+                    show = card.classList.contains('nto');
+                } else if (stoNto === 'no') {
+                    show = !card.classList.contains('nto');
+                }
+                if (show && category) {
+                    const catText = card.querySelector('.location-category')?.textContent || '';
+                    show = catText.includes(category);
+                }
+                card.style.display = show ? '' : 'none';
+            });
         }
-    });
+
+        // Update URL without reloading
+        function updateUrl(params) {
+            const newUrl = window.location.pathname + (params.toString() ? '?' + params.toString() : '');
+            history.replaceState(null, '', newUrl);
+        }
+
+        // Handle filter changes – keep URL in sync & apply filters
+        document.getElementById('filterForm').addEventListener('change', function(e) {
+            if (e.target.tagName === 'SELECT' || e.target.type === 'radio') {
+                const params = new URLSearchParams();
+                const stoVal = document.querySelector('input[name="sto_nto"]:checked')?.value;
+                if (stoVal) params.set('sto_nto', stoVal);
+                const catVal = document.querySelector('select[name="category"]')?.value;
+                if (catVal) params.set('category', catVal);
+                updateUrl(params);
+                applyFilters();
+            }
+        });
+
+        // Clear filters – reset UI and URL
+        function clearFilters() {
+            const url = window.location.pathname;
+            history.replaceState(null, '', url);
+            // Reset form controls
+            document.querySelectorAll('input[name="sto_nto"]').forEach(r => {
+                r.checked = r.value === '';
+            });
+            const categorySelect = document.querySelector('select[name="category"]');
+            if (categorySelect) categorySelect.value = '';
+            applyFilters();
+        }
+
+        // Initial filter application on page load
+        applyFilters();
+
+        // Preserve scroll position across navigation
+        window.addEventListener('load', function() {
+            const scrollPosition = sessionStorage.getItem('scrollPosition');
+            if (scrollPosition) {
+                window.scrollTo(0, parseInt(scrollPosition));
+                sessionStorage.removeItem('scrollPosition');
+            }
+        });
     </script>
 
     <div id="map"></div>
