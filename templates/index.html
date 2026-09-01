@@ -1198,10 +1198,10 @@
         e3Line.bindPopup("<b>E3 Trail (Kom–Emine)</b><br><span style='color: #666; font-size: 12px;'>European long-distance hiking trail</span>");
 
         L.marker(e3Start).addTo(map)
-            .bindPopup("<b>Старт</b><br>връх Ком");
+            .bindPopup("<b>Е3 Старт</b><br>връх Ком");
 
         L.marker(e3End).addTo(map)
-            .bindPopup("<b>Финал</b><br>нос Емине");
+            .bindPopup("<b>Е3 Финал</b><br>нос Емине");
 
         // --- E4 Trail: Vitosha → Verila → Rila → Pirin → Slavyanka ---
         // Every coordinate below was decoded from the real Leaflet DOM of
@@ -1374,10 +1374,10 @@
         e4Line.bindPopup("<b>E4 Trail (Vitosha → Verila → Rila → Pirin → Slavyanka)</b><br><span style='color: #666; font-size: 12px;'>European long-distance hiking trail · ~260 km</span>");
 
         L.marker(e4Start).addTo(map)
-            .bindPopup("<b>Старт</b><br>Драгалевци, Витоша");
+            .bindPopup("<b>Е4 Старт</b><br>Драгалевци, Витоша");
 
         L.marker(e4End).addTo(map)
-            .bindPopup("<b>Финал</b><br>Гоцев връх, Славянка");
+            .bindPopup("<b>Е4 Финал</b><br>Гоцев връх, Славянка");
 
         // --- E8 Trail: exact GPX track supplied by user ---
 // Source: E8 Rila-Rodopi_26072014.gpx
@@ -11660,10 +11660,10 @@ var e8Line = L.polyline(e8Coords, {
 e8Line.bindPopup("<b>E8 Trail (Borovets → Rila → Rhodopes → Eastern Rhodopes)</b><br><span style='color: #666; font-size: 12px;'>Exact track from supplied GPX · " + e8Coords.length.toLocaleString() + " track points</span>");
 
 L.marker(e8Start).addTo(map)
-    .bindPopup("<b>Старт</b><br>Боровец");
+    .bindPopup("<b>Е8 Старт</b><br>Боровец");
 
 L.marker(e8End).addTo(map)
-    .bindPopup("<b>Край на GPX трака</b><br>" + e8End[0].toFixed(6) + ", " + e8End[1].toFixed(6));
+    .bindPopup("<b>Е8 Край</b><br> Мезек");
 
 
         // --- Toggle: show only the E trails, hiding all location pins ---
