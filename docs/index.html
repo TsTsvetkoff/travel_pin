@@ -600,7 +600,10 @@
         }
 
         // Initial filter application on page load
-        applyFilters();
+        // (Deferred until the DOM — including the .location-card elements
+        // further down the page — has fully loaded, otherwise this runs
+        // before there is anything to filter and silently does nothing.)
+        document.addEventListener('DOMContentLoaded', applyFilters);
 
         // Preserve scroll position across navigation
         window.addEventListener('load', function() {
