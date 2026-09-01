@@ -565,6 +565,33 @@
                 }
                 card.style.display = show ? '' : 'none';
             });
+
+            // Filter the map pins to match (locationMarkers/map are created
+            // by the Leaflet script further down the page, so guard against
+            // this running before they exist).
+            if (typeof locationMarkers !== 'undefined' && typeof map !== 'undefined') {
+                locationMarkers.forEach(marker => {
+                    let show = true;
+                    if (stoNto === 'yes') {
+                        show = marker.locNto === true;
+                    } else if (stoNto === 'no') {
+                        show = marker.locNto === false;
+                    }
+                    if (show && category) {
+                        show = marker.locCategory === category;
+                    }
+                    // Respect the "Show only Grand E trails" toggle if it's
+                    // currently hiding all pins.
+                    if (show && typeof showingOnlyTrails !== 'undefined' && showingOnlyTrails) {
+                        show = false;
+                    }
+                    if (show) {
+                        if (!map.hasLayer(marker)) marker.addTo(map);
+                    } else {
+                        if (map.hasLayer(marker)) map.removeLayer(marker);
+                    }
+                });
+            }
         }
 
         // Update URL without reloading
@@ -629,2419 +656,2419 @@
     </div>
 
     <div class="locations">
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Музей крепост Баба Вида</h2>
                 <p class="location-category">Category: Fortress</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Пещера Магура</h2>
                 <p class="location-category">Category: Cave</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Белоградчишки скали и крепост</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Чипровски манастир &#34;Св. Иван Рилски&#34;</h2>
                 <p class="location-category">Category: Monastery</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">връх Ком (х2)</h2>
                 <p class="location-category">Category: Peak</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Клисурски манастир &#34;Св. св. Кирил и Методий&#34;</h2>
                 <p class="location-category">Category: Monastery</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Национален музей-параход &#34;Радецки&#34;</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Паметник на Христо Ботев - Околчица</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Вратцата</h2>
                 <p class="location-category">Category: Rock Formation</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Пещера &#34;Леденика&#34;</h2>
                 <p class="location-category">Category: Cave</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Къща музей &#34;Баба Илийца&#34;</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Черепишки манастир &#34;Успение Богородично&#34;</h2>
                 <p class="location-category">Category: Monastery</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Ритлите (x2)</h2>
                 <p class="location-category">Category: Rock Formation</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Манастир &#34;Седемте престола&#34;</h2>
                 <p class="location-category">Category: Monastery</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Божи мост</h2>
                 <p class="location-category">Category: Rock Formation</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Драгоманско блато</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">исторически музей Ботевград</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Часовникова кула</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Скравенски манастир &#34;Св. Николай Летни&#34;</h2>
                 <p class="location-category">Category: Monastery</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Пещера &#34;Проходна&#34; (x2)</h2>
                 <p class="location-category">Category: Cave</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Екопътека Искър-Панега</h2>
                 <p class="location-category">Category: Gorge / Eco Trail</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Национален пещерен дом – Карлуково</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Скален манастир &#34;Св. Никола (Глигора)&#34;</h2>
                 <p class="location-category">Category: Monastery</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Провъртеникът</h2>
                 <p class="location-category">Category: Rock Formation</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Каменните къщи</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Златният парк</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Пещера &#34;Съева дупка&#34;</h2>
                 <p class="location-category">Category: Cave</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Гложенски манастир &#34;Св. Георги Победоносец&#34;</h2>
                 <p class="location-category">Category: Monastery</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Исторически мост на победата над река Вит</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Язовир Тотлебенов вал</h2>
                 <p class="location-category">Category: Lake / Reservoir</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Възстановка освобождението на Плевен</h2>
                 <p class="location-category">Category: Event</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Цепен камък</h2>
                 <p class="location-category">Category: Rock Formation</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Екопътека &#34;Чернелка&#34;</h2>
                 <p class="location-category">Category: Gorge / Eco Trail</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Панорама &#34;Плевенска епопея 1877г.&#34;</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Късноантична римска крепост Сторгозия</h2>
                 <p class="location-category">Category: Fortress</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Зоопарк &#34;Кайлъка&#34;</h2>
                 <p class="location-category">Category: Zoo</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Музей на виното</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Природен парк &#34;Кайлъка&#34;</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Къща музей &#34;Цар Освободител Александър ІІ&#34;</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Мавзолей-параклис &#34;Св. Георги Победоносец&#34;</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Регионален исторически музей</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Художествена галерия &#34;Илия Бешков&#34;</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Пещера стълбицата</h2>
                 <p class="location-category">Category: Cave</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Деветашка пещера</h2>
                 <p class="location-category">Category: Cave</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Крушунски водопади</h2>
                 <p class="location-category">Category: Waterfall</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Зоопарк Ловеч</h2>
                 <p class="location-category">Category: Zoo</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Покритият мост</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Архитектурно-исторически резерват &#34;Вароша&#34; </h2>
                 <p class="location-category">Category: AIR</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Крепост Хисаря</h2>
                 <p class="location-category">Category: Fortress</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Музей „Къкринско ханче“</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Каньонът на река Негованка / Емен</h2>
                 <p class="location-category">Category: Gorge / Eco Trail</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Момин скок</h2>
                 <p class="location-category">Category: Waterfall</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Зараповски водопад</h2>
                 <p class="location-category">Category: Waterfall</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Парк &#34;Калето&#34; и Слънчевият часовник</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Къща-музей &#34;Алеко Константинов&#34;</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Мостът на Колю Фичето на река Янтра</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Хотнишки водопад и екопътека</h2>
                 <p class="location-category">Category: Waterfall</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Археологически резерват Никополис ад Иструм</h2>
                 <p class="location-category">Category: AIR</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Шоу - звук и светлина</h2>
                 <p class="location-category">Category: Event</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">3D mapping show</h2>
                 <p class="location-category">Category: Event</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Преображенски манастир &#34;Преображение Господне&#34;</h2>
                 <p class="location-category">Category: Monastery</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Арбанашкият манастир &#34;Св. Богородица”</h2>
                 <p class="location-category">Category: Monastery</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Крепостта Царевец</h2>
                 <p class="location-category">Category: Fortress</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Средновековен град-крепост Червен</h2>
                 <p class="location-category">Category: AIR</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Скален манастир „Св. Димитрий Басарбовски”</h2>
                 <p class="location-category">Category: Monastery</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Ивановски скални църкви</h2>
                 <p class="location-category">Category: Monastery</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Пантеон на Възрожденците</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Музей на Дунавския риболов и лодкостроене</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Резерват &#34;Сребърна&#34;</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">крепост Меджиди Табия</h2>
                 <p class="location-category">Category: Fortress</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Художествена галерия</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Археологически резерват &#34;Абритус&#34;</h2>
                 <p class="location-category">Category: AIR</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Демир Баба теке</h2>
                 <p class="location-category">Category: Monastery</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Тракийски град крепост Хелис</h2>
                 <p class="location-category">Category: Fortress</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Плиска</h2>
                 <p class="location-category">Category: AIR</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Залив Болата</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">нос Калиакра</h2>
                 <p class="location-category">Category: Fortress</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Архитектурно-парков комплекс „Двореца“ (x2)</h2>
                 <p class="location-category">Category: AIR</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Аладжа манастир</h2>
                 <p class="location-category">Category: Monastery</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Военноисторически музей</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Музей на мозайките</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Побити камъни</h2>
                 <p class="location-category">Category: Rock Formation</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Яйлата</h2>
                 <p class="location-category">Category: AIR</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Арката</h2>
                 <p class="location-category">Category: Rock Formation</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Шабленски фар</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Художествена галерия</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Язовир Искър</h2>
                 <p class="location-category">Category: Lake / Reservoir</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Крепост &#34;Траянови врата&#34;</h2>
                 <p class="location-category">Category: Fortress</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Костенски водопад (x2)</h2>
                 <p class="location-category">Category: Waterfall</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Мемориален комплекс &#34;Васил Левски&#34;</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Църква &#34;Успение на св. Богородица&#34;</h2>
                 <p class="location-category">Category: Monastery</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Цари Мали Град (x2)</h2>
                 <p class="location-category">Category: Fortress</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Язовир &#34;Панчарево&#34;</h2>
                 <p class="location-category">Category: Lake / Reservoir</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Комплекс &#34;Камбаните&#34;</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Парк &#34;Врана&#34; - Дворцов комплекс </h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Връх Черни връх (х4)</h2>
                 <p class="location-category">Category: Peak</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Скален феномен &#34;Златните мостове&#34;</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Телевизионна кула &#34;Копитото&#34;</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Боянски водопад</h2>
                 <p class="location-category">Category: Waterfall</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Боянската църква</h2>
                 <p class="location-category">Category: Monastery</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">кукерски събор &#34;Сурва&#34;</h2>
                 <p class="location-category">Category: Event</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Екопътека &#34;Пътека на здравето&#34;</h2>
                 <p class="location-category">Category: Gorge / Eco Trail</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Бояснко езеро</h2>
                 <p class="location-category">Category: Lake / Reservoir</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Земенски манастир Св. Йоан Богослов</h2>
                 <p class="location-category">Category: Monastery</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Мегалитен Храм-кладенец</h2>
                 <p class="location-category">Category: Sanctuary</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Ждрелото на река Ерма (x2)</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Скална църква &#34;Св. Петка&#34;</h2>
                 <p class="location-category">Category: Monastery</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Връх Руй</h2>
                 <p class="location-category">Category: Peak</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Хижа „Алеко“</h2>
                 <p class="location-category">Category: Hut</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Национален археологически институт с музей</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Софийски зоопарк</h2>
                 <p class="location-category">Category: Zoo</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Музей на историята на физическата култура и спорта</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Национален природонаучен музей при БАН</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Национална художествена галерия</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Национален дворец на културата</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Национален музей „Земята и хората“</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Храм-паметник „Свети Александър Невски“ с криптата</h2>
                 <p class="location-category">Category: Monastery</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Национален исторически музей</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">гейзерът в Сапарева баня (x2)</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Кадин мост</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Художествена галерия &#34;Владимир Димитров-Майстора&#34;</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Празник на черешата Кюстендил</h2>
                 <p class="location-category">Category: Event</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Български вековни секвои – местност Ючбунар</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">парк Хисарлъка</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Връх Руен (х2)</h2>
                 <p class="location-category">Category: Peak</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">АВИОШОУ - &#34;ТОВА СМЕ НИЕ&#34;</h2>
                 <p class="location-category">Category: Event</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Симеоновски езера</h2>
                 <p class="location-category">Category: Lake / Reservoir</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Манастир „Света Троица“</h2>
                 <p class="location-category">Category: Monastery</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Етрополски водопад - Варовитец</h2>
                 <p class="location-category">Category: Waterfall</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Часовникова кула</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Чекотински манастир &#34;Св. Архангел Михаил&#34;</h2>
                 <p class="location-category">Category: Monastery</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Исторически музей</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Исторически музей Тетевен</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Водопад &#34;Скока&#34; - Тетевен</h2>
                 <p class="location-category">Category: Waterfall</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Язовир &#34;Сопот&#34;</h2>
                 <p class="location-category">Category: Lake / Reservoir</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Шипковски минерални бани</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Троянски манастир &#34;Успение Богородично&#34;</h2>
                 <p class="location-category">Category: Monastery</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Водопад &#34;Видимско пръскало&#34;</h2>
                 <p class="location-category">Category: Waterfall</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Природонаучен музей</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">	 Географски център на България</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Зоопарк Габрово</h2>
                 <p class="location-category">Category: Zoo</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Национален парк-музей &#34;Шипка&#34;</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">дом паметник на Бузлуджа</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Соколски манастир &#34;Успение Богородично&#34;</h2>
                 <p class="location-category">Category: Monastery</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Шипченски манастир &#34;Рождество Христово&#34;</h2>
                 <p class="location-category">Category: Monastery</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Архитектурно-етнографският комплекс &#34;Етър&#34; - Габрово</h2>
                 <p class="location-category">Category: AIR</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Архитектурно-исторически резерват &#34;Боженци&#34;</h2>
                 <p class="location-category">Category: AIR</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Музей на резбарското и етнографското изкуство - Трявна</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Дряновски манастир &#34;Св. Архангел Михаил&#34;</h2>
                 <p class="location-category">Category: Monastery</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Архитектурно-исторически комплекс — „Даскалоливницата“ – Елена</h2>
                 <p class="location-category">Category: AIR</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Музей на котленските възрожденци – Котел</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">къща музей Йордан Йовков</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Архитектурно-исторически резерват Жеравна</h2>
                 <p class="location-category">Category: AIR</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Местност &#34;Карандила&#34;</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Старият бряст - Сливен</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">скално образувание &#34;Халката&#34;</h2>
                 <p class="location-category">Category: Rock Formation</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Археологически резерват &#34;Кабиле&#34;</h2>
                 <p class="location-category">Category: AIR</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Могила Голяма Косматка</h2>
                 <p class="location-category">Category: Tomb</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Вратата на Богинята майка</h2>
                 <p class="location-category">Category: Sanctuary</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Казанлъшка гробница</h2>
                 <p class="location-category">Category: Tomb</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">етнографски комплекс Дамасцена</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Язовир Копринка</h2>
                 <p class="location-category">Category: Lake / Reservoir</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Къща-музей  &#34;Христо Ботев&#34;</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Кадемлийското пръскало</h2>
                 <p class="location-category">Category: Waterfall</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Райското пръскало</h2>
                 <p class="location-category">Category: Waterfall</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">връх Левски (Амбарица) </h2>
                 <p class="location-category">Category: Peak</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Връх Ботев ( х3 )</h2>
                 <p class="location-category">Category: Peak</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Къща-музей „Васил Левски“</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Археологически музей</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Момина баня</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Кромлех при село Старо Железаре</h2>
                 <p class="location-category">Category: Cromlech</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Тракийски култов комплекс</h2>
                 <p class="location-category">Category: Sanctuary</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Къща-музей „Иван Вазов“</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Исторически музей - Клисура</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Паметник на Боримечката</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">връх Марагидик</h2>
                 <p class="location-category">Category: Peak</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">връх Купена</h2>
                 <p class="location-category">Category: Peak</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Връх Вежен</h2>
                 <p class="location-category">Category: Peak</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Връх Богдан</h2>
                 <p class="location-category">Category: Peak</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Архитектурно-исторически резерват</h2>
                 <p class="location-category">Category: AIR</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Къща-музей „Райна Княгиня“</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Историческа местност „Оборище“</h2>
                 <p class="location-category">Category: AIR</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Арехеологическият парк &#34;Тополница&#34;</h2>
                 <p class="location-category">Category: AIR</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Античен театър</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Стария Пловдив</h2>
                 <p class="location-category">Category: AIR</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Исторически музей</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Асенова крепост (x2)</h2>
                 <p class="location-category">Category: Fortress</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Рибната църква “Св. Богородица – Благовещение”</h2>
                 <p class="location-category">Category: Monastery</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Бачковски манастир</h2>
                 <p class="location-category">Category: Monastery</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Чирпански манастир „Свети Атанасий“: най-старият в Европа</h2>
                 <p class="location-category">Category: Monastery</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Зоокът Хаджидимово</h2>
                 <p class="location-category">Category: Zoo</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Зоо кът „Алис“</h2>
                 <p class="location-category">Category: Zoo</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Гигински манастир &#34;Св. св. Козма и Дамян&#34;</h2>
                 <p class="location-category">Category: Monastery</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Мемориален комплекс “Бранителите на Стара Загора&#34;</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Неолитни жилища</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">парк Аязмото</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Карановска селищна могила</h2>
                 <p class="location-category">Category: Tomb</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Източна могила</h2>
                 <p class="location-category">Category: Tomb</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Исторически музей - Батак</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Църква-костница „Света Неделя“</h2>
                 <p class="location-category">Category: Monastery</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Цигов Чарк</h2>
                 <p class="location-category">Category: Lake / Reservoir</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Исторически музей </h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Пещера &#34;Снежанка&#34;</h2>
                 <p class="location-category">Category: Cave</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Червената църква</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Историко-археологичен резерват „Шуменска крепост“</h2>
                 <p class="location-category">Category: Fortress</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Паметник „1300 години България“</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Мадарски конник</h2>
                 <p class="location-category">Category: Rock Formation</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Археологически музей &#34;Велики Преслав&#34;</h2>
                 <p class="location-category">Category: AIR</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Крепост Овеч</h2>
                 <p class="location-category">Category: Fortress</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Чудните скали</h2>
                 <p class="location-category">Category: Rock Formation</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Остров Света Анастасия</h2>
                 <p class="location-category">Category: Island</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Етнографски музей</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Музей на солта</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Защитена местност Пода</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Исторически парк</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Делфинариум Варна</h2>
                 <p class="location-category">Category: Zoo</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Седемте рилски езера (х3)</h2>
                 <p class="location-category">Category: Lake / Reservoir</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Мусала (x2)</h2>
                 <p class="location-category">Category: Peak</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Мальовица (x2)</h2>
                 <p class="location-category">Category: Peak</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Рилски манастир</h2>
                 <p class="location-category">Category: Monastery</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Стобски пирамиди</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">язовир Белмекен</h2>
                 <p class="location-category">Category: Lake / Reservoir</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">връх Белмекен</h2>
                 <p class="location-category">Category: Peak</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">хижа Белмекен</h2>
                 <p class="location-category">Category: Hut</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Исторически музей Велинград</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Клептуза (x2)</h2>
                 <p class="location-category">Category: Lake / Reservoir</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Плиоценски парк Дорково</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Крепост Цепина</h2>
                 <p class="location-category">Category: Fortress</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Църква Св. Св. Теодор Тирон и Теодор Стратилат</h2>
                 <p class="location-category">Category: Monastery</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Къща-музей Никола Вапцаров</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Църква &#34;Света Троица&#34;</h2>
                 <p class="location-category">Category: Monastery</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Връх Вихрен (х3)</h2>
                 <p class="location-category">Category: Peak</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Седловина Кончето (х3)</h2>
                 <p class="location-category">Category: Rock Formation</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Празник на кестена</h2>
                 <p class="location-category">Category: Event</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">парк Бачиново</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">кръста над Благоевград</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Архитектурен комплекс Вароша</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">„Свето Възнесение Господне”</h2>
                 <p class="location-category">Category: Monastery</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Исторически музей Благоевград</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Картала</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">хижа Македония (x2)</h2>
                 <p class="location-category">Category: Hut</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">яз. Широка поляна</h2>
                 <p class="location-category">Category: Lake / Reservoir</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">яз.Доспат</h2>
                 <p class="location-category">Category: Lake / Reservoir</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Роженски манастир</h2>
                 <p class="location-category">Category: Monastery</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">АИР Мелник</h2>
                 <p class="location-category">Category: AIR</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Рупите - Храм-паметник Света Петка Българска Баба Ванга</h2>
                 <p class="location-category">Category: Sanctuary</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Хераклея Синтика</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Самуилова крепост</h2>
                 <p class="location-category">Category: Fortress</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Връх Радомир</h2>
                 <p class="location-category">Category: Peak</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">връх Конгур</h2>
                 <p class="location-category">Category: Peak</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">връх Гоцев (x2)</h2>
                 <p class="location-category">Category: Peak</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Преподобна Стойна</h2>
                 <p class="location-category">Category: Sanctuary</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Парк &#34;Свети Врач&#34;</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">парк Рила Дупница</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Софраджик</h2>
                 <p class="location-category">Category: Gorge / Eco Trail</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Екопътека “Зорница”</h2>
                 <p class="location-category">Category: Gorge / Eco Trail</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Под Камико</h2>
                 <p class="location-category">Category: Waterfall</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Белинташ (x2)</h2>
                 <p class="location-category">Category: Sanctuary</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Кръстова гора</h2>
                 <p class="location-category">Category: Sanctuary</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Караджов камък</h2>
                 <p class="location-category">Category: Rock Formation</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Скален мост &#34;Шапран дупка&#34;</h2>
                 <p class="location-category">Category: Rock Formation</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Ягодинска пещера</h2>
                 <p class="location-category">Category: Cave</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Триградско ждрело</h2>
                 <p class="location-category">Category: Gorge / Eco Trail</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Дяволското Гърло</h2>
                 <p class="location-category">Category: Cave</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Чудните мостове</h2>
                 <p class="location-category">Category: Rock Formation</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">връх Бекови скали</h2>
                 <p class="location-category">Category: Peak</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Язовир Въча</h2>
                 <p class="location-category">Category: Lake / Reservoir</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Широка лъка</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Национална астрономическа обсерватория &#34;Рожен&#34;</h2>
                 <p class="location-category">Category: Observatory / Planetarium</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Събор на народното творчество и животновъдство &#34;Рожен&#34;</h2>
                 <p class="location-category">Category: Event</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">връх Голям Перелик</h2>
                 <p class="location-category">Category: Peak</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Водопад &#34;Орфей&#34; и каньона на водопадите</h2>
                 <p class="location-category">Category: Waterfall</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Пещерата &#34;Ухловица&#34;</h2>
                 <p class="location-category">Category: Cave</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Дяволски мост</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Етнографски музей Златоград</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Меандър „Завоя“ на язовир Кърджали</h2>
                 <p class="location-category">Category: Lake / Reservoir</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">пещера Утробата</h2>
                 <p class="location-category">Category: Cave</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Каменната сватба</h2>
                 <p class="location-category">Category: Rock Formation</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Перперикон</h2>
                 <p class="location-category">Category: Sanctuary</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Татул</h2>
                 <p class="location-category">Category: Sanctuary</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Каменните гъби</h2>
                 <p class="location-category">Category: Rock Formation</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Монумент „Света Богородица“</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Вила &#34;Армира&#34;</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Мезешка крепост</h2>
                 <p class="location-category">Category: Fortress</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Мезешка гробница</h2>
                 <p class="location-category">Category: Tomb</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Кован кая</h2>
                 <p class="location-category">Category: Rock Formation</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Дом-музей Пеньо Пенев</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Планетариум Смолян</h2>
                 <p class="location-category">Category: Observatory / Planetarium</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Кромлех Долни Главанак</h2>
                 <p class="location-category">Category: Observatory / Planetarium</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Гайдарско надсвирване в село Гела </h2>
                 <p class="location-category">Category: Event</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Етнографско-археологически музей Елхово</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Историческа местност Петрова нива</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card nto">
                 <h2 class="location-title">Археологически музей Созопол</h2>
                 <p class="location-category">Category: Museum</p>
                 <p class="location-nto yes">100 НТО: Yes</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Остров Св. Иван </h2>
                 <p class="location-category">Category: Island</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">комплекс &#34;Южна крепостна стена и кула&#34;</h2>
                 <p class="location-category">Category: Fortress</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Замъкът в Равадиново</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Беглик Таш</h2>
                 <p class="location-category">Category: Sanctuary</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Устието на река Велека</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Местност &#34;Корабите&#34;</h2>
                 <p class="location-category">Category: Rock Formation</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Паметник Спартак</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Археологически резерват Никополис ад Нестум</h2>
                 <p class="location-category">Category: AIR</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Тракийски камъни</h2>
                 <p class="location-category">Category: Rock Formation</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Панорамна алея &#34;Стъпалата&#34;</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Нове - античен римски град край Свищов</h2>
                 <p class="location-category">Category: Fortress</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Село Ковачевица - исторически и архитектурен резерват</h2>
                 <p class="location-category">Category: AIR</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Село Лещен - исторически и архитектурен резерват</h2>
                 <p class="location-category">Category: AIR</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Вазовата екопътека</h2>
                 <p class="location-category">Category: Gorge / Eco Trail</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">водопад Скакля</h2>
                 <p class="location-category">Category: Waterfall</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Пещерата на Свети Иван Рилски</h2>
                 <p class="location-category">Category: Rock Formation</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Екопътека &#34;Бяла река&#34;</h2>
                 <p class="location-category">Category: Gorge / Eco Trail</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Калоферски мъжки манастир &#34;Рождество Богородично&#34;</h2>
                 <p class="location-category">Category: Monastery</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Село Ъглен и скалната арка над река Вит</h2>
                 <p class="location-category">Category: Rock Formation</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Комплекс Дядо Йоцо</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Екопътека &#34;Бяли Искър&#34;</h2>
                 <p class="location-category">Category: Gorge / Eco Trail</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Нос Агалина</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Фестивал на Пясъчните Скулптури</h2>
                 <p class="location-category">Category: Event</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Парк за танцуващи мечки (х2) </h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Скално образувание &#34;Слона&#34;</h2>
                 <p class="location-category">Category: Rock Formation</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Панорамна площадка &#34;Орлово око&#34;</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">ТВ Кула - Снежанка</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Орфееви скали</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Село Долен - исторически и архитектурен резерват</h2>
                 <p class="location-category">Category: AIR</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Водопад Попина лъка</h2>
                 <p class="location-category">Category: Waterfall</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Мишкова нива</h2>
                 <p class="location-category">Category: Cromlech</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Фотински водопади</h2>
                 <p class="location-category">Category: Waterfall</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Каменните глави - Градище Долно Дряново</h2>
                 <p class="location-category">Category: Rock Formation</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Овчарченски водопад Горица</h2>
                 <p class="location-category">Category: Waterfall</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Водопад Рилска Скакавица</h2>
                 <p class="location-category">Category: Waterfall</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Водопад Полска Скакавица</h2>
                 <p class="location-category">Category: Waterfall</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Връх Безбог</h2>
                 <p class="location-category">Category: Peak</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Попово езеро</h2>
                 <p class="location-category">Category: Lake / Reservoir</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Връх Голямо Градище</h2>
                 <p class="location-category">Category: Peak</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">„Гробницата“ на богинята Бастет</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">водопад Докузак</h2>
                 <p class="location-category">Category: Waterfall</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Местност Живата вода и змейският извор</h2>
                 <p class="location-category">Category: Gorge / Eco Trail</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">хижа Ком (х2)</h2>
                 <p class="location-category">Category: Hut</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">хижа Лескова</h2>
                 <p class="location-category">Category: Hut</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">хижа Свищи плаз</h2>
                 <p class="location-category">Category: Hut</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">хижа Ехо</h2>
                 <p class="location-category">Category: Hut</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Хижа Добрила</h2>
                 <p class="location-category">Category: Hut</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">хижа Тъжа (х2)</h2>
                 <p class="location-category">Category: Hut</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">хижа Грамадлива</h2>
                 <p class="location-category">Category: Hut</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">хижа Буковец</h2>
                 <p class="location-category">Category: Hut</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">хижа Мазалат</h2>
                 <p class="location-category">Category: Hut</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">хижа Плевен</h2>
                 <p class="location-category">Category: Hut</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">хижа Рай</h2>
                 <p class="location-category">Category: Hut</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">хижа Кашана</h2>
                 <p class="location-category">Category: Hut</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">хижа Козя Стена</h2>
                 <p class="location-category">Category: Hut</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">хижа Дерменка</h2>
                 <p class="location-category">Category: Hut</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">хижа Узана</h2>
                 <p class="location-category">Category: Hut</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">хижа Чумерна</h2>
                 <p class="location-category">Category: Hut</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">хижа Вада</h2>
                 <p class="location-category">Category: Hut</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">хижа Ловна</h2>
                 <p class="location-category">Category: Hut</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Хижа Мальовица</h2>
                 <p class="location-category">Category: Hut</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">хижа Рибни езера</h2>
                 <p class="location-category">Category: Hut</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Хижа &#34;Рилски езера&#34;</h2>
                 <p class="location-category">Category: Hut</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">хижа Скакавица</h2>
                 <p class="location-category">Category: Hut</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">хижа Безбог</h2>
                 <p class="location-category">Category: Hut</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">хижа Вихрен (х3)</h2>
                 <p class="location-category">Category: Hut</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Хижа Малина </h2>
                 <p class="location-category">Category: Hut</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">хижа Трите реки</h2>
                 <p class="location-category">Category: Hut</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Хижа Предел</h2>
                 <p class="location-category">Category: Hut</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">хижа Яворов</h2>
                 <p class="location-category">Category: Hut</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">хижа Славянка</h2>
                 <p class="location-category">Category: Hut</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">хижа Извора (х2)</h2>
                 <p class="location-category">Category: Hut</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">хижа Конгур</h2>
                 <p class="location-category">Category: Hut</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">хижа Осогово</h2>
                 <p class="location-category">Category: Hut</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Парк Остров &#34;Свобода&#34; </h2>
                 <p class="location-category">Category: Island</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">заслон Тевно езеро</h2>
                 <p class="location-category">Category: Hut</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Байкушева мура</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">нос Емине</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">връх Паскал</h2>
                 <p class="location-category">Category: Peak</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Връх Тетевенска баба</h2>
                 <p class="location-category">Category: Peak</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Връх Булуваня</h2>
                 <p class="location-category">Category: Peak</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Езерен връх</h2>
                 <p class="location-category">Category: Peak</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Вазов връх</h2>
                 <p class="location-category">Category: Peak</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Додов връх</h2>
                 <p class="location-category">Category: Peak</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">връх Черна поляна (Карааланица) </h2>
                 <p class="location-category">Category: Peak</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">връх Капатник</h2>
                 <p class="location-category">Category: Peak</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Суходолското езеро</h2>
                 <p class="location-category">Category: Lake / Reservoir</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">заслон Кончето</h2>
                 <p class="location-category">Category: Hut</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">връх Кутело 2</h2>
                 <p class="location-category">Category: Peak</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">връх Кутело 1</h2>
                 <p class="location-category">Category: Peak</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Жабешко Бъндеришко езеро</h2>
                 <p class="location-category">Category: Lake / Reservoir</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Дълго Бъндеришко езеро</h2>
                 <p class="location-category">Category: Lake / Reservoir</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">връх Превалски чукар</h2>
                 <p class="location-category">Category: Peak</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Голям Царев връх</h2>
                 <p class="location-category">Category: Peak</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Бистришки водопад </h2>
                 <p class="location-category">Category: Waterfall</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">екодом Самоковище</h2>
                 <p class="location-category">Category: Hut</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">язовир Студен Кладенец </h2>
                 <p class="location-category">Category: Lake / Reservoir</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">оопарк Благоевград</h2>
                 <p class="location-category">Category: Zoo</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Поповокапски езеро</h2>
                 <p class="location-category">Category: Lake / Reservoir</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Страшното езеро</h2>
                 <p class="location-category">Category: Lake / Reservoir</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Хижа Мусала</h2>
                 <p class="location-category">Category: Hut</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">връх Алеко</h2>
                 <p class="location-category">Category: Peak</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">връх Людмил Янков</h2>
                 <p class="location-category">Category: Peak</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">връх Малка Мусала</h2>
                 <p class="location-category">Category: Peak</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">Долене</h2>
                 <p class="location-category">Category: Park / Landmark</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">връх Мечит</h2>
                 <p class="location-category">Category: Peak</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">връх Малък Мечит</h2>
                 <p class="location-category">Category: Peak</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">хижа Мечит</h2>
                 <p class="location-category">Category: Hut</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
             <div class="location-card regular">
                 <h2 class="location-title">връх Иречек</h2>
                 <p class="location-category">Category: Peak</p>
                 <p class="location-nto no">100 НТО: No</p>
             </div>
-        
+
     </div>
 
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
@@ -3065,6 +3092,12 @@
                     "Category: " + loc.category + "<br>" +
                     "100 НТО: " + (loc.sto_nto ? "Yes" : "No")
                 );
+                // Tag the marker with its filterable data so applyFilters()
+                // (defined earlier in the page) can show/hide it to match
+                // the category / 100-НТО filters, the same way it does for
+                // the .location-card list items.
+                marker.locCategory = loc.category;
+                marker.locNto = !!loc.sto_nto;
                 locationMarkers.push(marker);
             }
         });
