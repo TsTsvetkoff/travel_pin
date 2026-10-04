@@ -20,9 +20,17 @@ The local SQLite file is created from `locations.json` on first launch. Existing
 ## Enable GitHub Pages once
 
 1. Put the contents of this project at the root of your GitHub repository, including `.github/workflows/pages.yml`, `locations.json`, `templates/`, and `static/`. Do not upload just `_site/`. If using the GitHub upload UI, ensure the hidden `.github` folder is included.
-2. Use branch `main`, or change both the workflow branch and `PAGES_BRANCH` to match yours.
+2. Use branch `main`, or change the workflow branch to match yours.
 3. In repository **Settings → Pages → Build and deployment → Source**, select **GitHub Actions**.
 4. Commit and push. The included workflow tests, builds, and publishes your site. It supports both `username.github.io` and `username.github.io/repository/` using relative URLs.
+
+If your repository is configured as **Deploy from a branch** with the `/docs` folder, the supplied `docs/` directory is already a static snapshot. Keep the `/docs/.nojekyll` file and select `main` + `/docs`; this bypasses Jekyll and avoids SCSS conversion errors. Regenerate it after data or template changes with:
+
+```bash
+python build_static.py --output docs
+```
+
+The error `Jekyll::Converters::Scss ... /github/workspace/docs` means Pages is using that branch-based Jekyll mode while the `docs` directory is missing or contains a stale Jekyll configuration. Select **GitHub Actions** for automatic builds, or use the included `docs/` snapshot with `.nojekyll`.
 
 The bundle is ready to deploy, but no GitHub repository was supplied or connected here, so it has not been published to a live GitHub URL.
 
