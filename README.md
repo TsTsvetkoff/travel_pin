@@ -1,5 +1,5 @@
 # Trail Atlas · My Bulgaria
-
+Add new place - https://nominatim.openstreetmap.org/ui/search.html
 A responsive Flask pin editor and GitHub Pages travel atlas using the same templates and data. The supplied 425 places and all five certificates are preserved. The old embedded E routes have been replaced by your E3, E4 and E8 GPX recordings.
 
 ## Run locally

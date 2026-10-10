@@ -3398,5 +3398,21 @@
     "longitude": 25.9552004,
     "category": "Sanctuary",
     "sto_nto": 0
+  },
+  {
+    "id": 427,
+    "name_bg": "хижа Студенец",
+    "latitude": 41.6429544,
+    "longitude": 24.6903407,
+    "category": "Hut",
+    "sto_nto": 0
+  },
+  {
+    "id": 428,
+    "name_bg": "гара Аврамово",
+    "latitude": 42.0367197,
+    "longitude": 23.8202443,
+    "category": "Park / Landmark",
+    "sto_nto": 0
   }
 ]
